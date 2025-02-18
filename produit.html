@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ma Boutique</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+    <body>
+        <header>
+            <h2>Bienvenue sur Ma Boutique</h2>
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">Accueil</a>
+                <a class="texte_barre" href="produit.html">Produits</a>
+                <a class="texte_barre" href="#">Contact</a>
+                <a href="#" id="cart-link">🛒<span id="cart-count">0</span></a>
+            </nav>
+        </header>
+<section id="products">
+    <div class="produit">
+        <img alt="T-shirt" src="téléchargement.png"/>
+        <h3>T-shirt</h3>
+        <p>19.99€</p>
+        <button><a href="T-shirt.html">En savoir plus</a></button>
+    </div>
+    <div class="produit" data-name="Hoodie" data-price="50">
+        <img alt="Hoodie" src="téléchargement.png"/>
+        <h3>Hoodie</h3>
+        <p>50€</p>
+        <button><a href="#">En savoir plus</a></button>
+        </div>
+    <br class="code">
+        <div class="produit">
+        <img alt="casquette" src="téléchargement.png"/>
+        <h3>casquette</h3>
+        <p>9,99€</p>
+    <button><a href="casquette.html">En savoir plus</a></button>
+</div>
+</br>
+</section>
+    <section id="cart" style="display: none;">
+        <h2>Votre Panier</h2>
+        <ul id="cart-items"></ul>
+        <p>Total : <span id="cart-total">0</span>€</p>
+</section>
+<footer>
+        <p class="droits">© 2025 Ma Boutique. Tous droits réservés.</p>
+</footer>
+<script src="script.js"></script>
+</body></html>

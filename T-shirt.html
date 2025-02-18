@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>t-shirt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Bienvenue sur Ma Boutique</h2>
+        <nav class="menu"> 
+            <a class="texte_barre" href="index.html">Accueil</a>
+            <a class="texte_barre" href="produit.html">Produits</a>
+
+            <a href="#" id="cart-link">
+                🛒 <span id="cart-count">0</span>
+                
+            </a>
+        </nav>
+    </header>
+    <main>
+        
+    <h1>T-shirt</h1>
+    <img src="téléchargement.png" alt="T-shirt" style="width:300px;">
+    <p>Prix : 19,99€</p>
+    <button onclick="addToCart('T-shirt','19,99')">Ajouter au panier</button>     
+       
+    <section id="cart" style="display: none;">
+        <h2>Votre Panier</h2>
+            <ul id="cart-items"></ul>
+            <p>Total : <span id="cart-total">0</span>€</p>
+        </section>
+            </main> 
+    <footer>
+        <p class="droits">&copy; 2024 Ma Boutique. Tous droits réservés.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>

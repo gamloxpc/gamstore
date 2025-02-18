@@ -1,0 +1,133 @@
+.navbar ol {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding:  5px 10px;
+
+}
+
+.mots_navbar {
+  display: inline;
+  margin-right: 5px;
+
+}
+.mots_navbar a {
+  text-decoration: none;
+  color: black;
+}
+.mots_navbar a::hover{
+  text-decoration: underline;
+}
+
+.mots_navbar::after {
+  content: '>>';
+  margin-left: 5px;
+  color: #888;
+}
+.navbar ol li:last-child::after {
+    content: none;
+}
+
+.imgproduit {
+  display: block;
+  margin-left:100%;
+}
+/*détail des produit*/
+.product-page {
+  display: flex;             /* Active Flexbox pour la page produit */
+  gap: 2rem;                /* Espace entre la galerie et les détails */
+  padding: 2rem;             /* Marge intérieure autour du contenu */
+}
+
+.product-gallery {
+  display: flex;             /* Active Flexbox pour la galerie */
+  flex-direction: column;    /* Empile les miniatures et l'image principale verticalement */
+  align-items: center;       /* Centre horizontalement les éléments dans la galerie */
+  width: 46%;                /* Détermine la largeur de la galerie */
+  margin-left: 25%;         /* Décale la galerie à gauche */
+}
+
+.thumbnails {
+  display: flex;             /* Active Flexbox pour les miniatures */
+  gap: 0.5rem;               /* Espace entre les miniatures */
+  width: 100%;              /* Les miniatures prennent toute la largeur disponible */
+  justify-content: center;  /* Centre horizontalement les miniatures */
+}
+
+.thumbnail {
+  width: 70px;               /* Ajuste la largeur des miniatures */
+  height: 70px;              /* Ajuste la hauteur des miniatures */
+  object-fit: cover;        /* Assure que les images miniatures sont bien cadrées */
+  border: 1px solid #ccc;    /* Bordure des miniatures */
+  cursor: pointer;           /* Change le curseur au survol */
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);     /* Agrandit légèrement les miniatures au survol */
+  border-color: #000;        /* Change la couleur de la bordure au survol */
+}
+
+.main-image img {
+  width: 100%;              /* L'image principale prend toute la largeur disponible */
+  max-width: 400px;          /* Limite la largeur maximale de l'image */
+  height: auto;              /* La hauteur s'ajuste automatiquement */
+  object-fit: contain;      /* Assure que l'image principale est bien cadrée */
+  border: 1px solid #ccc;    /* Bordure de l'image principale */
+  border-radius: 10px;       /* Bords arrondis */
+  margin-top: 1rem;          /* Marge au-dessus de l'image */
+}
+
+.product-details {
+  width: 60%;                /* Détermine la largeur des détails du produit */
+}
+
+.product-details h1 {
+  font-size: 1.5rem;         /* Taille du titre */
+  margin-bottom: 1rem;      /* Marge sous le titre */
+}
+
+.price {
+  font-size: 1.2rem;         /* Taille du prix */
+  color: #333;               /* Couleur du prix */
+  margin-bottom: 1rem;      /* Marge sous le prix */
+}
+
+.product-options {
+  display: flex;             /* Active Flexbox pour les options */
+  flex-direction: column;    /* Empile les options verticalement */
+  gap: 1rem;                /* Espace entre les options */
+  margin-bottom: 1rem;      /* Marge sous les options */
+}
+
+.option label {
+  display: block;             /* Étiquette sur une ligne séparée */
+  font-weight: bold;        /* Met l'étiquette en gras */
+}
+
+.quantity {
+  margin-bottom: 1rem;      /* Marge sous la quantité */
+}
+
+.add-to-cart {
+  background-color: #007BFF; /* Couleur du bouton */
+  color: white;             /* Couleur du texte du bouton */
+  padding: 0.75rem 1.5rem;   /* Marge intérieure du bouton */
+  border: none;              /* Supprime la bordure */
+  border-radius: 5px;       /* Bords arrondis */
+  cursor: pointer;           /* Change le curseur au survol */
+  font-size: 1rem;         /* Taille du texte du bouton */
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3; /* Change la couleur au survol */
+}
+
+/* Correction pour .imgproduit (image principale) */
+.imgproduit {
+  display: block;         /* S'assure que l'image est un élément de bloc */
+  margin-left: 0;         /* Supprime la marge à gauche qui poussait l'image */
+  width: 100%;
+  height: auto;
+}

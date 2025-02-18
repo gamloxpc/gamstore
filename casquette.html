@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>casquette</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produit.css">
+    <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
+</head>
+<body>
+    <header>
+        <h1 class="title_gamstore">Gamstore</h1>  
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Rechercher un produit...">
+            <div  id="search-results"></div>
+        </div>
+        <nav class="menu"> 
+            <a class="texte_barre" href="index.html">Accueil</a>
+            <a class="texte_barre" href="produit.html">Produits</a>
+            <a class="texte_barre" href="#">Contact</a>
+            <a href="#" id="cart-link">🛒<span id="cart-count">0</span></a>   
+    </nav">
+    </header>
+    <br><br>
+    <nav class="navbar">
+      <ol >
+          <li class="mots_navbar"><a href="index.html">Accueil</a></li>
+          <li class="mots_navbar"><a href="produit.html">Produits</a></li>
+          <li class="mots_navbar">Casquette</li>
+      </ol>
+    </nav>
+
+
+    <main class="product-page">
+        <div class="product-gallery">
+          <div class="thumbnails">
+            <img src="téléchargement.png" alt="Miniature 1" class="thumbnail" >
+            <img src="photo2.jpg" alt="Miniature 2" class="thumbnail" >
+            <img src="téléchargement.png" alt="Miniature 3" class="thumbnail">
+          </div>
+          <div class="main-image">
+            <img src="téléchargement.png" alt="Casquette principale" class="imgproduit" id="main-image">
+          </div>
+        </div>
+      
+        <div class="product-details">
+          <h1>Casquette</h1>
+          <p class="price">Prix : <strong>9,99€</strong></p>
+      
+          <div class="product-options">
+            <div class="option">
+              <label for="size">Taille :</label>
+              <select id="size">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+            </div>
+            <div class="option">
+              <label for="color">Couleur :</label>
+              <select id="color">
+                <option>Noir</option>
+                <option>Rouge</option>
+                <option>Bleu</option>
+                <option>Vert</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="quantity">
+            <label for="quantity">Qté :</label>
+            <input type="number" id="quantity" min="1" value="1">
+          </div>
+      
+
+    <p>Prix : 9,99€</p>
+    <button onclick="addToCart('casquette', '9')">Ajouter au panier</button>
+   
+   
+    <section id="cart" style="display: none;">
+        <h2>Votre Panier</h2>
+        <ul id="cart-items"></ul>
+        <p>Total : <span id="cart-total">0</span>€</p>
+    </section>
+</main> 
+
+
+
+
+<footer>
+    <p class="droits">&copy; 2024 Ma Boutique. Tous droits réservés.</p>
+</footer>
+<script src="script.js"></script>
+<script src="search.js"></script>
+
+</body>
+</html>
