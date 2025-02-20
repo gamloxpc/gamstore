@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-    <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Ma Boutique</title>
-<link href="style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+    <link href="icon.jpg" rel="shortcut icon" type="image/png">
+    <link href="principal.css" rel="stylesheet">
 </head>
-    <body>
-        <header>
-            <h2>Bienvenue sur Ma Boutique</h2>
-            <nav class="menu">
-                <a class="texte_barre" href="index.html">Accueil</a>
-                <a class="texte_barre" href="produit.html">Produits</a>
-                <a class="texte_barre" href="#">Contact</a>
-                <a href="#" id="cart-link">🛒<span id="cart-count">0</span></a>
-            </nav>
-        </header>
+<body>
+      <header>
+       <h1 class="title_gamstore">GamStore</h1>
+       <div class="search-container">
+           <input id="search-bar" placeholder="Rechercher un produit..." type="text">
+           <div id="search-results"></div>
+       </div>
+       <nav class="menu">
+           <a class="texte_barre" href="index.html">Accueil</a>
+           <a class="texte_barre" href="produit.html">Produits</a>
+           <a class="texte_barre" href="#">Contact</a>
+           <a href="#" id="cart-link">🛒<span id="cart-count">0</span></a>
+       </nav>
+    </header>
 <section id="products">
     <div class="produit">
         <img alt="T-shirt" src="téléchargement.png"/>

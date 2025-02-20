@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamStore</title>
+    <title>Bienvenue sur GamStore</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
+
+    <link rel="stylesheet" href="principal.css">
 </head>
 <body>
     <header>
-        <h2>Bienvenue sur Ma Boutique</h2>
+        <h1 class="title_gamstore">GamStore</h1>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Rechercher un produit...">
+            <div id="search-results"></div>
+        </div>
         <nav class="menu"> 
             <a class="texte_barre" href="index.html">Accueil</a>
             <a class="texte_barre" href="produit.html">Produits</a>
-
+            <a class="texte_barre" href="#">Contact</a>
             <a href="#" id="cart-link">
                 🛒 <span id="cart-count">0</span>
-                
             </a>
         </nav>
     </header>
@@ -43,9 +49,10 @@
         </section>
     </main>  
     <footer>
-        <p class="droits">&copy; 2024 Ma Boutique. Tous droits réservés.</p>
+        <p class="droits">&copy; 2025 Ma Boutique. Tous droits réservés.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="search.js"></script>
 
 </body>
 </html>
