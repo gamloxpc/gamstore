@@ -12,14 +12,14 @@ header {
     margin: 0;
     position: relative;
     top: -23px;
-    display: flex;              /* Active Flexbox */
-    align-items: center;       /* Centre verticalement */
+    display: flex;          /* Active Flexbox */
+    align-items: center;   /* Centre verticalement */
 }
 
 .title_gamstore {
-    text-align: center;         /* Centre le texte */
+    text-align: center;     /* Centre le texte */
     color: red;
-    margin: 0;               /* Supprime la marge par défaut */
+    margin: 0;           /* Supprime la marge par défaut */
     flex-grow: 1;            /* Prend l'espace disponible */
 }
 
