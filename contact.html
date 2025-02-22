@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
+
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+    <header>
+        <h1 class="title_gamstore">GamStore</h1>
+        <div class="container">
+            <input type="text" name="search" placeholder="Search..." class="input" id="searchInput" />
+            <a href="#" class="btn">
+              <i class="fas fa-search"></i>
+            </a>
+           <div id="searchResults"></div> 
+          </div>
+        <nav class="menu"> 
+            <a class="texte_barre" href="index.html">Accueil</a>
+            <a class="texte_barre" href="produit.html">Produits</a>
+            <a class="texte_barre" href="#">Contact</a>
+            <a href="#" id="cart-link">
+                🛒 <span id="cart-count">0</span>
+            </a>
+        </nav>
+        <br>
+    </header>
+ <div class="conr">
+        <h1>Contactez-nous</h1>
+
+        <div class="contact-form">
+            <form action="traitementContact.php" method="post"> 
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet :</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+        <section id="cart" style="display: none;">
+            <h2>Votre Panier</h2>
+            <ul id="cart-items"></ul>
+            <p>Total : <span id="cart-total">0</span>€</p>
+        </section>
+
+        <div class="contact-info">
+            <h2>Informations de contact</h2>
+            <p><strong>Adresse :</strong> Votre Adresse, Ville, Pays</p>
+            <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+            <p><strong>Email :</strong> <a href="mailto:contact@votreboutique.com">contact@votreboutique.com</a></p>
+        </div>
+
+        <div class="social-links">
+            <h2>Suivez-nous</h2>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a> <!-- Remplacez # par vos liens -->
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+  
+    <footer style="background-color:#333; color:#fff; padding:20px;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+        
+            <div style="width:30%; min-width:250px;">
+                <h3>À propos de nous</h3>
+                <p>Courte description de votre entreprise et de ce que vous vendez. Mettez en avant votre mission et vos valeurs.</p>
+                <p><a href="/a-propos" style="color:#fff; text-decoration:none;">En savoir plus</a></p>
+            </div>
+    
+            <div style="width:30%; min-width:250px;">
+                <h3>Informations utiles</h3>
+                <ul>
+                    <li><a href="/livraison" style="color:#fff; text-decoration:none;">Livraison</a></li>
+                    <li><a href="/retours" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
+                    <li><a href="/paiement-securise" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
+                    <li><a href="/faq" style="color:#fff; text-decoration:none;">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div style="width:30%; min-width:250px;">
+                <h3>Contact</h3>
+                <p>Adresse : Votre adresse physique</p>
+                <p>Email : <a href="mailto:contact@example.com" style="color:#fff;">contact@example.com</a></p>
+                <p>Téléphone : Votre numéro de téléphone</p>
+                <h3>Suivez-nous</h3>
+                <div style="display:flex; justify-content:flex-start;">
+                    <a href="#" style="color:#fff; margin-right:10px;"><img src="icone-facebook.png" alt="Facebook" width="24"></a>
+                    <a href="#" style="color:#fff; margin-right:10px;"><img src="icone-twitter.png" alt="Twitter" width="24"></a>
+                    <a href="#" style="color:#fff;"><img src="icone-instagram.png" alt="Instagram" width="24"></a>
+                </div>
+            </div>
+    
+            <div style="width:100%; text-align:center; margin-top:20px; font-size:0.8em;">
+                <p>© 2024 Votre Boutique. Tous droits réservés.</p>
+                <p><a href="/conditions-generales" style="color:#fff; text-decoration:none;">Conditions générales de vente</a> | <a href="/politique-confidentialite" style="color:#fff; text-decoration:none;">Politique de confidentialité</a> | <a href="/mentions-legales" style="color:#fff; text-decoration:none;">Mentions légales</a></p>
+            </div>
+    
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+
+</body>
+</html>

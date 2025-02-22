@@ -51,40 +51,41 @@
           <h1>Casquette</h1>
           <p class="price">Prix : <strong>9,99€</strong></p>
       
-          <div class="product-options">
-            <div class="option">
-              <label for="size">Taille :</label>
-              <select id="size">
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-              </select>
+          <div class="product" data-name="casquette" data-price="9.99">
+            <div class="product-options">
+                <div class="option">
+                    <label for="size">Taille :</label>
+                    <select id="size">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                </div>
+                <div class="option">
+                    <label for="color">Couleur :</label>
+                    <select id="color">
+                        <option>Noir</option>
+                        <option>Rouge</option>
+                        <option>Bleu</option>
+                        <option>Vert</option>
+                    </select>
+                </div>
             </div>
-            <div class="option">
-              <label for="color">Couleur :</label>
-              <select id="color">
-                <option>Noir</option>
-                <option>Rouge</option>
-                <option>Bleu</option>
-                <option>Vert</option>
-              </select>
+            <div class="quantity">
+                <label for="quantity">Qté :</label>
+                <input type="number" id="quantity" min="1" value="1">
             </div>
+            <button>Ajouter au panier</button>
           </div>
-      
-          <div class="quantity">
-            <label for="quantity">Qté :</label>
-            <input type="number" id="quantity" min="1" value="1">
-          </div>
-      
+        </div>
+      </main>
 
-    <p>Prix : 9,99€</p>
-    <button onclick="addToCart('casquette', '9')">Ajouter au panier</button>
-   
    
     <section id="cart" style="display: none;">
         <h2>Votre Panier</h2>
         <ul id="cart-items"></ul>
         <p>Total : <span id="cart-total">0</span>€</p>
+        <button><a href="commande.html">Commander</a></button>
     </section>
 </main> 
 

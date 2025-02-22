@@ -4,7 +4,7 @@
   margin: 0;
   display: flex;
   align-items: center;
-  padding:  5px 10px;
+
 
 }
 
@@ -17,7 +17,7 @@
   text-decoration: none;
   color: black;
 }
-.mots_navbar a::hover{
+.mots_navbar a:hover{
   text-decoration: underline;
 }
 
@@ -30,10 +30,7 @@
     content: none;
 }
 
-.imgproduit {
-  display: block;
-  margin-left:100%;
-}
+
 /*détail des produit*/
 .product-page {
   display: flex;             /* Active Flexbox pour la page produit */
@@ -127,7 +124,7 @@
 /* Correction pour .imgproduit (image principale) */
 .imgproduit {
   display: block;         /* S'assure que l'image est un élément de bloc */
-  margin-left: 0;         /* Supprime la marge à gauche qui poussait l'image */
+  margin-left: 0%;         /* Supprime la marge à gauche qui poussait l'image */
   width: 100%;
   height: auto;
 }

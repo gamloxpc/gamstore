@@ -1,49 +1,51 @@
-function searchProducts() {
-    let input = document.getElementById("search-bar").value.toLowerCase();
-    let searchResults = document.getElementById("search-results");
+// Données de test (REMPLACEZ CECI par vos propres données)
+const data = [
+    { name: "casquette", url: "casquette.html" },
+    { name: "Banana", url: "https://en.wikipedia.org/wiki/Banana" },
+    { name: "Cherry", url: "https://en.wikipedia.org/wiki/Cherry" },
+    { name: "Date", url: "https://en.wikipedia.org/wiki/Date_(fruit)" },
+    { name: "Fig", url: "https://en.wikipedia.org/wiki/Fig" },
+    { name: "Grape", url: "https://en.wikipedia.org/wiki/Grape" },
+    { name: "Lemon", url: "https://en.wikipedia.org/wiki/Lemon" },
+    { name: "Mango", url: "https://en.wikipedia.org/wiki/Mango" }
+];
 
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", function() {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    if (searchTerm === "") {
+        searchResults.style.display = "none";
+        searchResults.innerHTML = "";
+        return;
+    }
+
+    const results = data.filter(item => item.name.toLowerCase().includes(searchTerm)); // Modifié pour utiliser item.name
+    displayResults(results);
+});
+
+function displayResults(results) {
     searchResults.innerHTML = "";
 
-    // Structure de données améliorée avec des URLs
-    let products = [
-        { name: "produit", url: "produit.html" },
-        { name: "casquette", url: "casquette.html" },
-        { name: "T-shirt", url: "t-shirt.html" }
-    ];
-
-    let filteredProducts = products.filter(product => product.name.toLowerCase().includes(input));
-
-    if (input.trim() !== "" && filteredProducts.length > 0) {
-        searchResults.style.display = "block";
-
-        filteredProducts.forEach(product => {
-            // Crée un élément div pour chaque résultat
-            let div = document.createElement("div");
-            div.classList.add("search-item");
-            
-            // Crée un lien <a>
-            let a = document.createElement("a");
-            a.href = product.url;
-            a.textContent = product.name; // Met le nom du produit comme texte du lien
-            
-            // Ajoute le lien <a> dans le div
-            div.appendChild(a);
-
-            // Ajoute le div dans les résultats
-            searchResults.appendChild(div);
-        });
+    if (results.length === 0) {
+        searchResults.innerHTML = "<p>No results found.</p>";
     } else {
-        searchResults.style.display = "none";
+        const list = document.createElement("ul");
+        results.forEach(result => {
+            const item = document.createElement("li");
+            item.textContent = result.name; // Modifié pour afficher item.name
+
+            // Ajout d'un gestionnaire d'événement de clic pour la redirection
+            item.addEventListener("click", function() {
+                window.location.href = result.url; // Redirection vers l'URL
+            });
+
+            list.appendChild(item);
+        });
+        searchResults.appendChild(list);
     }
+
+    searchResults.style.display = "block";
 }
-
-document.getElementById("search-bar").addEventListener("input", searchProducts);
-
-document.addEventListener("click", function (e) {
-    let searchContainer = document.querySelector(".search-container");
-    let searchResults = document.getElementById("search-results");
-
-    if (!searchContainer.contains(e.target)) {
-        searchResults.style.display = "none";
-    }
-});

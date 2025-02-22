@@ -1,4 +1,4 @@
-Content-Type: application/json
+Content-Type: application/json;
 Accept: application/json
 document.addEventListener('DOMContentLoaded', function() { // Attendre que le DOM soit chargé
 
@@ -33,3 +33,4 @@ function isValidEmail(email) {
     // Une expression régulière simple pour valider le format d'un email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
