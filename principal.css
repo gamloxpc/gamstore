@@ -9,141 +9,34 @@ header {
     background-color: #333;
     color: white;
     padding: 1px;
+    text-align: center;
     margin: 0;
     position: relative;
-    top: -23px;
-    display: flex;          /* Active Flexbox */
-    align-items: center;   /* Centre verticalement */
+    top: -30px;
+    
 }
-
-.title_gamstore {
-    text-align: center;     /* Centre le texte */
-    color: red;
-    margin: 0;           /* Supprime la marge par défaut */
-    flex-grow: 1;            /* Prend l'espace disponible */
+header nav {
+    position: absolute;
+    left: 10%;
+    transform: translateX(-50%);
 }
-
-nav.menu {
-    display: flex;            /* Active Flexbox pour les liens */
-    align-items: center;     /* Centre verticalement les liens */
-}
-
-nav.menu a {
+header nav a {
     color: white;
-    margin: 0 10px;         /* Espacement entre les liens */
+    margin: 0 10px;
     text-decoration: none;
+    position: relative;
+    top:-35px;
+}
+
+.texte_barre {
     font-size: 25px;
 }
-
-/* Aligner le panier à droite */
-nav.menu a#cart-link {
-    margin-left: auto;      /* Pousse le panier vers la droite */
-    margin-right: 20px;      /* Petite marge à droite du panier */
-}
-/* Position du compteur du panier */
-#cart-count {
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 2px 6px;
-    position: relative;     /* Positionne par rapport au lien */
-    top: -8px;
-    left: 5px;            /* Ajuste la position horizontale */
-}
-/*searchbar*/
-.container {
-    position: absolute;
-    left: 70%;
-    top: 35%;
-    transform: translate(-30%, -30%); /* Correction ici */
-    padding: 5px;
-    height: 80px; /* Correspond à la hauteur du bouton et de l'input */
-    display: flex; /* Pour un meilleur alignement des éléments */
-    align-items: center; /* Centre verticalement les éléments */
-}
-
-.input {
-    box-sizing: border-box;
-    height: 50px;
-    width: 0;
-    outline: none;
-    padding: 0 20px;
-    color: rgb(59, 23, 23);
-    font-size: 20px;
-    border: 1px solid #f4bf04;
-    border-radius: 50px;
-    transition: all 0.7s ease;
-}
-
-::placeholder {
-    color: grey;
-}
-
-.btn {
-    position: absolute;
-    right: 0;
-    top: 40; /* Correction ici */
-    background: red;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    border-radius: 50%;
+/* Style du panier */
+#cart-link {
+    position: relative;
     cursor: pointer;
-    border: none; /* Supprime la bordure par défaut des liens */
-    padding: 0; /* Supprime le padding par défaut des liens */
-    display: flex; /* Centre l'icône avec flexbox */
-    justify-content: center;
-    align-items: center;
-}
+    left: 375%;
 
-.btn i {
-    font-size: 25px;
-    color: white;
-    transition: all 0.5s ease;
-}
-
-.container:hover input {
-    width: 300px;
-}
-
-.container:hover .btn i { /*Correction ici, important de cibler .btn i et non i seulement*/
-    transform: rotate(180deg);
-}
-
-#searchResults {
-    position: absolute; /* Permet de positionner précisément sous la barre de recherche */
-    top: 100%; /* Place le début de la zone de résultats juste en dessous de la barre de recherche */
-    left: 0; /* Aligne à gauche avec la barre de recherche */
-    width: 100%; /* Prend toute la largeur disponible */
-    background-color: rgb(254, 149, 149);
-    border: 1px solid #ccc;
-    border-top: none; /* Supprime la bordure supérieure pour un aspect plus propre */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* S'assure que la zone de résultats est au-dessus des autres éléments */
-    display: none; /* Cache la zone par défaut jusqu'à ce qu'il y ait des résultats */
-}
-
-#searchResults ul {
-    list-style: none; /* Supprime les puces par défaut de la liste */
-    padding: 0;
-    margin: 0;
-}
-
-#searchResults li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer; /* Indique que l'élément est cliquable */
-}
-
-#searchResults li:hover {
-    background-color: #f0f0f0; /* Change la couleur de fond au survol */
-}
-
-#searchResults p {
-    padding: 10px;
-    text-align: center;
-    color: #c65555;
 }
 #cart {
     position: fixed;
@@ -176,6 +69,16 @@ nav.menu a#cart-link {
     justify-content: space-between;
     padding: 5px 0;
     border-bottom: 1px solid #ccc;
+}
+.cart-count {   
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    left: 100px ;
 }
 
 .cart.visible{
@@ -217,4 +120,101 @@ nav.menu a#cart-link {
 
 #Tshop.visible {
     display: block;
+}
+/*searchbar*/
+.container {
+    position: absolute;
+    left: 70%;
+    top: 45%;
+    transform: translate(-30%, -30%); /* Correction ici */
+    padding: 5px;
+    height: 80px; /* Correspond à la hauteur du bouton et de l'input */
+    display: flex; /* Pour un meilleur alignement des éléments */
+    align-items: center; /* Centre verticalement les éléments */
+}
+
+.input {
+    box-sizing: border-box;
+    height: 40px;
+    width: 0;
+    outline: none;
+    padding: 0 20px;
+    color: rgb(59, 23, 23);
+    font-size: 20px;
+    border: 1px solid #f4bf04;
+    border-radius: 50px;
+    transition: all 0.7s ease;
+}
+
+::placeholder {
+    color: grey;
+}
+
+.btn {
+    position: absolute;
+    right: 6px;
+    top: 40; /* Correction ici */
+    background: red;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none; /* Supprime la bordure par défaut des liens */
+    padding: 0; /* Supprime le padding par défaut des liens */
+    display: flex; /* Centre l'icône avec flexbox */
+    justify-content: center;
+    align-items: center;
+}
+
+.btn i {
+    font-size: 25px;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.container:hover input {
+    width: 300px;
+}
+
+.container:hover .btn i {  /*Correction ici, important de cibler .btn i et non i seulement*/
+    transform: rotate(180deg);
+}
+#searchResults {
+    position: absolute; /* Permet de positionner précisément sous la barre de recherche */
+    top: 100%; /* Place le début de la zone de résultats juste en dessous de la barre de recherche */
+    left: 0; /* Aligne à gauche avec la barre de recherche */
+    width: 100%; /* Prend toute la largeur disponible */
+    background-color: rgb(254, 149, 149);
+    border: 1px solid #ccc;
+    border-top: none; /* Supprime la bordure supérieure pour un aspect plus propre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* S'assure que la zone de résultats est au-dessus des autres éléments */
+    display: none; /* Cache la zone par défaut jusqu'à ce qu'il y ait des résultats */
+}
+
+#searchResults ul {
+    list-style: none; /* Supprime les puces par défaut de la liste */
+    padding: 0;
+    margin: 0;
+}
+
+#searchResults li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer; /* Indique que l'élément est cliquable */
+}
+
+#searchResults li:hover {
+    background-color: #f0f0f0; /* Change la couleur de fond au survol */
+}
+
+#searchResults p {
+    padding: 10px;
+    text-align: center;
+    color: #c65555;
+}
+.title_gamstore{
+    text-align: center;
+    color: red;
 }
