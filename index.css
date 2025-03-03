@@ -1,0 +1,60 @@
+/* Style général de la section FAQ */
+.faq {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Style du titre de la section FAQ */
+.faq h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Style de la liste des questions et réponses */
+.faq-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+/* Style de chaque élément de la liste */
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Style de la question */
+.faq-question {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style de la réponse (masquée par défaut) */
+.faq-answer {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    padding: 10px;
+    display: none; /* Masquer la réponse par défaut */
+}
+
+/* Style de la réponse lorsqu'elle est visible */
+.faq-answer.show {
+    display: block; /* Afficher la réponse */
+}

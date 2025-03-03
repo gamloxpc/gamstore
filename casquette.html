@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +21,7 @@
         <a class="texte_barre" href="produit.html">Produits</a>
         <a class="texte_barre" href="#">Contact</a>
         <a href="#" id="cart-link">🛒<span id="cart-count">0</span></a>   
-</nav">
+</nav>
 </header>
 
     <br><br>
@@ -35,50 +34,45 @@
     </nav>
 
 
-    <main class="product-page">
-        <div class="product-gallery">
-          <div class="thumbnails">
-            <img src="téléchargement.png" alt="Miniature 1" class="thumbnail" >
-            <img src="photo2.jpg" alt="Miniature 2" class="thumbnail" >
+<main class="product-page">
+    <div class="product-gallery">
+        <div class="thumbnails">
+            <img src="téléchargement.png" alt="Miniature 1" class="thumbnail">
+            <img src="photo2.jpg" alt="Miniature 2" class="thumbnail">
             <img src="téléchargement.png" alt="Miniature 3" class="thumbnail">
-          </div>
-          <div class="main-image">
-            <img src="téléchargement.png" alt="Casquette principale" class="imgproduit" id="main-image">
-          </div>
         </div>
-      
-        <div class="product-details">
-          <h1>Casquette</h1>
-          <p class="price">Prix : <strong>9,99€</strong></p>
-      
-          <div class="product" data-name="casquette" data-price="9.99">
+        <div class="main-image-container">
+            <img src="téléchargement.png" alt="Casquette principale" class="imgproduit" id="main-image">
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h1>Casquette</h1>
+        <p class="price">Prix : <strong>9,99€</strong></p>
+    
+        <div class="product" data-name="casquette" data-price="9.99">
             <div class="product-options">
-                <div class="option">
-                    <label for="size">Taille :</label>
-                    <select id="size">
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                    </select>
-                </div>
                 <div class="option">
                     <label for="color">Couleur :</label>
                     <select id="color">
                         <option>Noir</option>
                         <option>Rouge</option>
-                        <option>Bleu</option>
-                        <option>Vert</option>
+                        <option>Blanc</option>
                     </select>
                 </div>
-            </div>
-            <div class="quantity">
-                <label for="quantity">Qté :</label>
-                <input type="number" id="quantity" min="1" value="1">
+                <div class="option">
+                    <label for="description">Description :</label>
+                    <p>Une description courte et attrayante du produit.</p>
+                </div>
+                <div class="quantity">
+                    <label for="quantity">Qté :</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                </div>
             </div>
             <button>Ajouter au panier</button>
-          </div>
         </div>
-      </main>
+    </div>
+</main>
 
    
     <section id="cart" style="display: none;">

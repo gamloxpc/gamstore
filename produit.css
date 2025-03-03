@@ -125,6 +125,104 @@
 .imgproduit {
   display: block;         /* S'assure que l'image est un élément de bloc */
   margin-left: 0%;         /* Supprime la marge à gauche qui poussait l'image */
-  width: 100%;
+  width: 50%;
   height: auto;
+}
+/* Style général de la section des détails du produit */
+.product-details {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 350px; /* Limiter la largeur pour un meilleur aspect */
+}
+
+/* Style du titre du produit */
+.product-details h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Style du prix */
+.product-details .price {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #e44d26; /* Couleur accent */
+}
+
+/* Style des options du produit (couleur, taille, etc.) */
+.product-options {
+    display: flex;  /* Afficher les options sur une seule ligne */
+    flex-wrap: wrap; /* Permettre aux options de passer à la ligne si l'espace est insuffisant */
+    gap: 15px;      /* Espacement entre les options */
+    margin-bottom: 20px;
+}
+
+/* Style des groupes d'options */
+.product-options .option {
+    display: flex;
+    flex-direction: column; /* Etiquette au-dessus du select */
+    width: 100px;
+}
+
+/* Style des étiquettes (labels) */
+.product-options label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #777;
+}
+
+/* Style des éléments <select> (listes déroulantes) */
+.product-options select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Style de la quantité */
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity label {
+    margin-right: 10px;
+}
+
+.quantity input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* Style du bouton "Ajouter au panier" */
+.product-details button {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease;
+}
+
+.product-details button:hover {
+    background-color: #3e8e41; /* Vert foncé au survol */
+}
+
+/* Style de la description */
+.product-details .description {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 15px;
 }

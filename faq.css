@@ -1,0 +1,107 @@
+/* Style général de la page FAQ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Style de la section FAQ */
+.faq {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du titre principal de la page */
+.faq h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: #2c3e50; /* Bleu foncé */
+    text-align: center;
+    border-bottom: 2px solid #3498db; /* Ligne en dessous du titre */
+    padding-bottom: 10px;
+}
+
+/* Style de l'introduction */
+.faq .introduction {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #777;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Style de la liste des questions et réponses */
+.faq-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style de chaque élément de la liste */
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+/* Style de la question */
+.faq-question {
+    font-size: 1.2em;
+    font-weight: 600; /* Semi-gras */
+    color: #34495e; /* Bleu foncé */
+    cursor: pointer;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding-right: 40px; /* Pour l'icône */
+}
+
+/* Icône (Font Awesome) pour la question */
+.faq-question::after {
+    content: '\f054'; /* Code Unicode pour l'icône "chevron-right" de Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: translateY(-50%) rotate(90deg); /* Rotation de l'icône quand la réponse est affichée */
+}
+
+.faq-question:hover {
+    background-color: #e8f4ff;
+}
+
+/* Style de la réponse (masquée par défaut) */
+.faq-answer {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #555;
+    padding: 0 20px;          /* Supprimer le padding par défaut */
+    overflow: hidden;        /* Important pour l'animation */
+    max-height: 0;           /* Hauteur initiale à 0 */
+    transition: max-height 0.3s ease; /* Ajouter la transition */
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    margin-top: 10px;
+}
+/* Style de la réponse lorsqu'elle est visible */
+.faq-answer.show {
+    display: block;            /* Garder display: block pour que la transition fonctionne */
+    padding: 20px;
+    max-height: 500px;       /* Hauteur maximale (ajuster selon le contenu) */
+
+}

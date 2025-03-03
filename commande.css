@@ -1,7 +1,25 @@
 /* Style général du formulaire */
 #order-form {
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 400px; /* Ajuster la largeur du formulaire */
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style du conteneur principal */
+.order-container {
+    display: flex;          /* Active Flexbox */
+    justify-content: space-between; /* Aligne les éléments horizontalement */
+    align-items: flex-start; /* Aligne le haut des deux colonnes */
+    max-width: 900px;       /* Ajuster la largeur maximale du conteneur */
+    margin: 20px auto;      /* Centrer le conteneur */
+}
+
+/* Style du récapitulatif de la commande */
+.order-summary {
+    width: 45%;            /* Ajuster la largeur du récapitulatif */
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -14,22 +32,26 @@
 }
 
 /* Style des étiquettes */
-label {
+.form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
-input[type="email"] {
+
+/* Style des champs de saisie */
+#order-form input[type="text"],
+#order-form input[type="email"],
+#order-form input[type="tel"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Important pour que le padding ne modifie pas la largeur totale */
+    box-sizing: border-box;
     font-size: 1em;
 }
 
 /* Style du bouton de soumission */
-button[type="submit"] {
+#order-form button[type="submit"] {
     background-color: #4CAF50; /* Vert */
     color: white;
     padding: 10px 20px;
@@ -39,6 +61,32 @@ button[type="submit"] {
     font-size: 1em;
 }
 
-button[type="submit"]:hover {
+#order-form button[type="submit"]:hover {
     background-color: #3e8e41;
+}
+
+/* Style pour le conteneur de la case à cocher et du label (Flexbox) */
+.form-group.terms-group {
+    display: flex;          /* Active Flexbox */
+    align-items: center;   /* Centre verticalement */
+    margin-bottom: 15px;
+}
+
+/* Style de la case à cocher */
+.form-group.terms-group input[type="checkbox"] {
+    margin-right: 5px;    /* Espacement entre la case et le texte */
+}
+
+/* Style des champs Prénom et Nom */
+.form-group.name-group {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group.name-group .prenom {
+    flex: 1;
+}
+
+.form-group.name-group .nom {
+    flex: 1;
 }

@@ -6,9 +6,12 @@
     <title>Commande</title>
     <link rel="stylesheet" href="principal.css">
     <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
-    <link rel="stylesheet" href="style.css">
- 
     <link rel="stylesheet" href="commande.css">
+             <script type="text/javascript" 
+                     src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  
+             <!-- Widget MR -->
+             <script type="text/javascript"   
+                     src="https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script>    
 </head>
 <body>
     <header>
@@ -30,89 +33,89 @@
         </nav>
     </header>
         <h2>Votre Commande</h2>
-
-        <h3>Articles du panier :</h3>
-        <ul id="order-items"></ul>  <!-- ID modifié -->
-        <p>Total : <span id="order-total">0</span>€</p>  <!-- ID modifié -->
-        <h3>Informations de livraison :</h3>
-        <form id="order-form" action="traitementCommande.php" method="post">
-            <div class="form-group">
-                <label for="">Mode de livraison :</label>
-                <input type="radio" id="standard" name="delivery_method" value="standard" checked>
-                <label for="standard">Livraison standard</label>
-                <input type="radio" id="mondial_relay" name="delivery_method" value="mondial_relay">
-                <label for="mondial_relay">Mondial Relay</label>
+        <div class="order-container">
+            <div class="order-summary">
+                <h2>Récapitulatif de votre commande</h2>
+                <ul id="order-items"></ul>
+                <div class="subtotal">Sous-total : <span id="order-subtotal">0.00</span>€</div>
+                <div class="shipping">Expédition : <span id="shipping-cost">0.00</span>€</div>
+                <div class="total">Total : <span id="order-total">0.00</span>€</div>
             </div>
         
-            <div id="mondial_relay_options" style="display: none;">
-                <div class="form-group">
-                    <label for="zip">Code Postal :</label>
-                    <input type="text" id="mr_zip" name="mr_zip">
-                    <button type="button" id="get_relay_points">Afficher les points de retrait</button>
+            <form id="order-form" action="traitementCommande.php" method="post">
+              
+                <div class="form-group name-group">
+                    <div class="prenom">
+                        <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
+                    </div>
+                    <div class="nom">
+                        <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Numéro de téléphone" required>
                 </div>
                 <div class="form-group">
-                    <label for="relay_point">Point de retrait :</label>
-                    <select id="relay_point" name="relay_point"></select>
+                    <input type="email" id="email" name="email" placeholder="votre@email" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <input type="text" id="address" name="address" placeholder="Adresse" required>
+                </div>
+        
+                <!-- Ajout du champ Complément d'adresse -->
+                <div class="form-group">
+                    <input type="text" id="address2" name="address2" placeholder="Complément d'adresse (facultatif)">
+                </div>
+        
+                <div class="form-group name-group">
+                    <div class="prenom">
+                        <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
+                    </div>
+                    <div class="nom">
+
+                        <input type="text" id="zip" name="zip" placeholder="code postal" required>
+                    </div>
+                </div>
+        
+                <!-- Ajout de la case à cocher -->
+                <div class="form-group terms-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">J'accepte les <a href="conditionVente.html" target="_blank">conditions générales de vente</a></label>
+                </div>
+        
+                <button type="submit">Confirmer la commande</button>
             </form>
-        <form id="order-form" action="traitementCommande.php" method="post">
-            <div class="form-group">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                    const orderItemsElement = document.getElementById('order-items');
+                    const orderSubtotalElement = document.getElementById('order-subtotal');
+                    const shippingCostElement = document.getElementById('shipping-cost');
+                    const orderTotalElement = document.getElementById('order-total');
+            
+                    let subtotalPrice = 0;
+            
+                    cartItems.forEach(item => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            ${item.name} (Taille: ${item.size}, Couleur: ${item.color}) x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}€
+                        `;
+                        orderItemsElement.appendChild(li);
+                        subtotalPrice += item.price * item.quantity;
+                    });
+            
+                    // Simuler des frais de port (vous devrez adapter ceci)
+                    const shippingCost = subtotalPrice > 50 ? 0 : 5; // Livraison gratuite si le sous-total dépasse 50€
+                    shippingCostElement.textContent = shippingCost.toFixed(2);
+            
+                    const totalPrice = subtotalPrice + shippingCost;
+            
+                    orderSubtotalElement.textContent = subtotalPrice.toFixed(2);
+                    orderTotalElement.textContent = totalPrice.toFixed(2);
+                });
+            </script>
             </div>
-            <div class="form-group">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="address">Adresse :</label>
-                <input type="text" id="address" name="address" required>
-            </div>
-            <div class="form-group">
-                <label for="city">Ville :</label>
-                <input type="text" id="city" name="city" required>
-            </div>
-            <div class="form-group">
-                <label for="zip">Code Postal :</label>
-                <input type="text" id="zip" name="zip" required>
-            </div>
-            <button type="submit">Confirmer la commande</button>
-        </form>
-    </div>
-    <section id="cart" style="display: none;">
-        <h2>Votre Panier</h2>
-        <ul id="cart-items">
-            <!-- Les articles du panier seront ajoutés ici par JavaScript -->
-        </ul>
-        <p>Total : <span id="cart-total">0.00</span>€</p>
-    </section>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Récupérer les articles du panier depuis le localStorage
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-    // Sélectionner les éléments du DOM
-    const orderItemsElement = document.getElementById('order-items');
-    const orderTotalElement = document.getElementById('order-total');
-
-    // Initialiser le total
-    let totalPrice = 0;
-
-    // Afficher les articles du panier
-    cartItems.forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            ${item.name} (Taille: ${item.size}, Couleur: ${item.color}) x${item.quantity} - ${item.price.toFixed(2)}€/unité - Total: ${(item.price * item.quantity).toFixed(2)}€
-        `;
-        orderItemsElement.appendChild(li);
-        totalPrice += item.price * item.quantity;
-    });
-
-    // Afficher le total
-    orderTotalElement.textContent = totalPrice.toFixed(2);
-});
-    </script>
+            </main>
 
 <br><br><br><br><br><br><br><br>
 

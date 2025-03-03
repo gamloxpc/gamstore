@@ -27,20 +27,23 @@ function LoadCart() {
 LoadCart(); // Charger le panier au démarrage
 
 // Ajouter un produit au panier (MODIFIÉE)
-function addToCart(productName, productPrice, quantity, size, color) {
+function addToCart(productName, productPrice, quantity, color) {
     // Vérifier que la quantité est un nombre entier valide
     if (isNaN(quantity) || quantity <= 0) {
         alert("Veuillez entrer une quantité valide.");
         return;
     }
 
+    // Créer un identifiant unique pour le produit en combinant le nom et la couleur
+    const productId = `${productName}-${color}`;
+
     // Vérifier si le produit est déjà dans le panier (en tenant compte de la taille et de la couleur)
-    const existingProduct = cart.find(item => item.name === productName && item.size === size && item.color === color);
+    const existingProduct = cart.find(item => item.id === productId);
 
     if (existingProduct) {
         existingProduct.quantity += quantity; // Augmenter la quantité
     } else {
-        cart.push({ name: productName, price: parseFloat(productPrice), quantity: quantity, size: size, color: color });
+        cart.push({ id: productId, name: productName, price: parseFloat(productPrice), quantity: quantity, color: color });
     }
 
     updateCart(); // Mettre à jour l'affichage du panier
@@ -65,7 +68,7 @@ function updateCart() {
         // Créer un élément de liste pour chaque produit
         const li = document.createElement('li');
         li.innerHTML = `
-            ${item.name} (Taille: ${item.size}, Couleur: ${item.color}) x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}€
+            ${item.name} (Couleur: ${item.color}) x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}€
             <button class="remove-btn" data-index="${index}">Supprimer</button>
         `;
         cartItemsElement.appendChild(li);
@@ -127,16 +130,11 @@ document.querySelectorAll('.product button').forEach(button => {
         const productName = productElement.dataset.name;
         const productPrice = productElement.dataset.price;
         const quantityInput = productElement.querySelector('.quantity input[type="number"]');
-        const sizeSelect = productElement.querySelector('.product-options #size');
         const colorSelect = productElement.querySelector('.product-options #color');
 
         // Vérification de l'existence des éléments
         if (!quantityInput) {
             console.error("L'élément .quantity input[type='number'] n'a pas été trouvé dans .product !");
-            return;
-        }
-        if (!sizeSelect) {
-            console.error("L'élément .product-options #size n'a pas été trouvé dans .product !");
             return;
         }
         if (!colorSelect) {
@@ -145,8 +143,14 @@ document.querySelectorAll('.product button').forEach(button => {
         }
 
         let quantity = parseInt(quantityInput.value, 10);
-        const size = sizeSelect.value;
         const color = colorSelect.value;
+
+        // Ajout des console.log pour vérifier les valeurs
+        console.log("Nom du produit:", productName);
+        console.log("Prix du produit:", productPrice);
+        console.log("Quantité:", quantity);
+        console.log("Couleur:", color);
+
 
         // Validation de la quantité AVANT l'appel à addToCart
         if (isNaN(quantity) || quantity <= 0) {
@@ -154,10 +158,34 @@ document.querySelectorAll('.product button').forEach(button => {
             return;
         }
 
-        addToCart(productName, productPrice, quantity, size, color); // Appel à addToCart avec les nouvelles options
+        addToCart(productName, productPrice, quantity, color); // Appel à addToCart avec les nouvelles options
     });
 });
-  
+
+// Ajouter des écouteurs d'événements pour les boutons "Supprimer", "Augmenter" et "Diminuer"
+const removeButtons = document.querySelectorAll('.remove-btn');
+removeButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.dataset.index);
+        removeFromCart(index);
+    });
+});
+
+const decreaseButtons = document.querySelectorAll('.decrease-btn');
+decreaseButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.dataset.index);
+        changeQuantity(index, -1); // Diminuer la quantité de 1
+    });
+});
+
+const increaseButtons = document.querySelectorAll('.increase-btn');
+increaseButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.dataset.index);
+        changeQuantity(index, 1); // Augmenter la quantité de 1
+    });
+});
 // Gérer le clic sur le logo du panier
 cartLink.addEventListener('click', (e) => {
     e.preventDefault(); // Empêcher le comportement par défaut du lien
@@ -173,11 +201,17 @@ shopLink.addEventListener('click', (e) => {
 // Charger le panier au chargement de la page
 window.addEventListener('load', LoadCart);
 
-// Ajouter un gestionnaire d'événement sur chaque miniature
-const thumbnails = document.querySelectorAll('.thumbnail');
-const mainImage = document.getElementById('main-image');
-thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', () => {
-        mainImage.src = thumbnail.src;
+// Attendre que le DOM soit complètement chargé
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionner toutes les miniatures et l'image principale
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.getElementById('main-image');
+
+    // Ajouter un écouteur d'événement à chaque miniature
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            // Changer la source de l'image principale avec la source de la miniature cliquée
+            mainImage.src = this.src;
+        });
     });
 });
