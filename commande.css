@@ -12,18 +12,17 @@
 .order-container {
     display: flex;          /* Active Flexbox */
     justify-content: space-between; /* Aligne les éléments horizontalement */
-    align-items: flex-start; /* Aligne le haut des deux colonnes */
-    max-width: 900px;       /* Ajuster la largeur maximale du conteneur */
-    margin: 20px auto;      /* Centrer le conteneur */
+
+    
+
 }
 
 /* Style du récapitulatif de la commande */
 .order-summary {
-    width: 45%;            /* Ajuster la largeur du récapitulatif */
-    padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
+    max-width: 45%;
 }
 
 /* Style des groupes de champs */
@@ -89,4 +88,48 @@
 
 .form-group.name-group .nom {
     flex: 1;
+}
+/* Style général pour la section de sélection du mode de livraison */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Style pour le label principal */
+.form-group > label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style pour le conteneur de chaque option (radio button + label) */
+.delivery-option {
+    display: flex;          /* Utilise Flexbox pour l'alignement */
+    align-items: center;    /* Centre verticalement */
+    margin-bottom: 8px;      /* Espacement entre les options */
+}
+
+/* Style pour les radio buttons */
+.delivery-option input[type="radio"] {
+    margin-right: 8px;      /* Espacement entre la puce et le label */
+}
+
+/* Style pour les labels associés aux radio buttons */
+.delivery-option label {
+    font-weight: normal;   /* Police normale */
+    margin-bottom: 0;        /* Supprime la marge par défaut */
+    cursor: pointer;        /* Change le curseur au survol */
+}
+
+/* Style pour les options Mondial Relay (cachées par défaut) */
+.mondial_relay_pr {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+/*style de la div*/
+#mondial_relay_options > div{
+    margin-left:20px;
+    display: grid;
 }

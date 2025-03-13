@@ -6,28 +6,34 @@
     <title>Contact</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
-
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="principal.css">
 </head>
 <body>
     <header>
-        <h1 class="title_gamstore">GamStore</h1>
-        <div class="container">
-            <input type="text" name="search" placeholder="Search..." class="input" id="searchInput" />
-            <a href="#" class="btn">
-              <i class="fas fa-search"></i>
-            </a>
-           <div id="searchResults"></div> 
-          </div>
-        <nav class="menu"> 
-            <a class="texte_barre" href="index.html">Accueil</a>
-            <a class="texte_barre" href="produit.html">Produits</a>
-            <a class="texte_barre" href="#">Contact</a>
-            <a href="#" id="cart-link">
-                🛒 <span id="cart-count">0</span>
-            </a>
-        </nav>
-        <br>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+   <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+                <a href="#" id="cart-link" class="menu-icon-link">
+                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
+                    Mon panier (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
     </header>
  <div class="conr">
         <h1>Contactez-nous</h1>
@@ -35,20 +41,77 @@
         <div class="contact-form">
             <form action="traitementContact.php" method="post"> 
                 <div class="form-group">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" required>
+                    <select id="raison" name="raison" required>
+                        <option value="" disabled selected>Raison de votre demande</option>
+                        <option value="infoCommande">Question sur une commande</option>
+                        <option value="inforProduit">Information sur un produit</option>
+                        <option value="retour">Retour ou échange</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="name" name="name" maxlength="50" required placeholder="Votre nom">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email"  maxlength="50"  required placeholder="Adresse e-mail">
+                </div>
+                <div id="commandeDetails" style="display: none;"> <!-- Initialement caché -->
+                    <div class="form-group">
+                        <input type="text" id="numeroCommande" name="numeroCommande" placeholder="Numéro de commande">
+                    </div>
+                    <div class="form-group">
+                        <select id="raisonCommande" name="raisonCommande">
+                            <option value="" disabled selected>Raison de votre demande</option>
+                            <option value="problemePayment">Problème concernant le paiement</option>
+                            <option value="modifCommande">Je souhaite modifier ma commande</option>
+                            <option value="autreCommande">Autre demande concernant votre commande</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="produitDetails" style="display: none;"> <!-- Initialement caché -->
+                    <div class="form-group">
+                        <select name="raisonProduit" id="raisonProduit">
+                            <option value="" disabled selected>Raison de votre demande</option>
+                            <option value="infoProduit">Je souhaite des informations sur un produit</option>
+                            <option value="dispoProduit">Je souhaite savoir si un produit est disponible</option>
+                            <option value="autreProduit">Autre demande concernant un produit</option>
+                            <option value="persoProduit">Je souhaite personnalisé un produit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nomProduit" name="nomProduit"  maxlength="50"  placeholder="Nom du produit">
+                    </div>
+                    <!-- Ajoutez ici d'autres champs spécifiques aux demandes d'informations sur un produit -->
+                </div>
+                <div id="retourDetails" style="display: none;"> <!-- Initialement caché -->
+                    <div class="form-group">
+                        <select name="raisonRetour" id="raisonRetour">
+                            <option value="" disabled selected>Raison de votre demande</option>
+                            <option value="infoProduit">Article endommagé mais pas le colis</option>
+                            <option value="dispoProduit">Article endommagé et le colis aussi</option>
+                            <option value="autreProduit">J'ai reçu le mauvais article</option>
+                            <option value="persoProduit">Il me manque un produit</option>
+                            <option value="persoProduit">Je souhaite retourner un produit</option>
+                            <option value="persoProduit">Je souhaite échanger un produit</option>
+                            <option value="persoProduit">Commande non reçu</option>
+                            <option value="persoProduit">Autre demande concernant un retour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="numeroCommande" name="numeroCommande"  maxlength="50" placeholder="Numéro de commande">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nomProduit" name="nomProduit"  maxlength="50"  placeholder="Nom du produit">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Sujet :</label>
-                    <input type="text" id="subject" name="subject">
+                    <input type="text" id="subject" name="subject"  maxlength="50"  required placeholder="Sujet">
                 </div>
                 <div class="form-group">
                     <label for="message">Message :</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message"  maxlength="500"  required></textarea>
                 </div>
                 <button type="submit">Envoyer</button>
             </form>
@@ -57,23 +120,8 @@
             <h2>Votre Panier</h2>
             <ul id="cart-items"></ul>
             <p>Total : <span id="cart-total">0</span>€</p>
-        </section>
-
-        <div class="contact-info">
-            <h2>Informations de contact</h2>
-            <p><strong>Adresse :</strong> Votre Adresse, Ville, Pays</p>
-            <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-            <p><strong>Email :</strong> <a href="mailto:contact@votreboutique.com">contact@votreboutique.com</a></p>
-        </div>
-
-        <div class="social-links">
-            <h2>Suivez-nous</h2>
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a> <!-- Remplacez # par vos liens -->
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-  
+        </section>  
+ </div>
     <footer style="background-color:#333; color:#fff; padding:20px;">
         <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
         
@@ -86,10 +134,10 @@
             <div style="width:30%; min-width:250px;">
                 <h3>Informations utiles</h3>
                 <ul>
-                    <li><a href="/livraison" style="color:#fff; text-decoration:none;">Livraison</a></li>
-                    <li><a href="/retours" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
-                    <li><a href="/paiement-securise" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
-                    <li><a href="/faq" style="color:#fff; text-decoration:none;">FAQ</a></li>
+                    <li><a href="livraison.html" style="color:#fff; text-decoration:none;">Livraison</a></li>
+                    <li><a href="retours.html" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
+                    <li><a href="paiement-securise.html" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
+                    <li><a href="faq.html" style="color:#fff; text-decoration:none;">FAQ</a></li>
                 </ul>
             </div>
     
@@ -113,6 +161,7 @@
     
         </div>
     </footer>
+    <script src="contact.js"></script>
     <script src="script.js"></script>
     <script src="search.js"></script>
 

@@ -1,56 +1,51 @@
 .navbar ol {
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 50;
   margin: 0;
   display: flex;
   align-items: center;
-
-
 }
-
 .mots_navbar {
   display: inline;
-  margin-right: 5px;
-
+  margin-right: 10px;
+  font-size: 0.9rem;
+  
 }
 .mots_navbar a {
-  text-decoration: none;
-  color: black;
+  font-family: AvenirNext, Helvetica, Arial, sans-serif;
+  color: #6a7889;
 }
 .mots_navbar a:hover{
-  text-decoration: underline;
+  color: red;
 }
-
 .mots_navbar::after {
-  content: '>>';
-  margin-left: 5px;
+  margin-left: 10px;
+  content: '/';
   color: #888;
 }
 .navbar ol li:last-child::after {
     content: none;
 }
-
-
 /*détail des produit*/
 .product-page {
   display: flex;             /* Active Flexbox pour la page produit */
-  gap: 2rem;                /* Espace entre la galerie et les détails */
-  padding: 2rem;             /* Marge intérieure autour du contenu */
+            /* Marge intérieure autour du contenu */
 }
 
 .product-gallery {
   display: flex;             /* Active Flexbox pour la galerie */
-  flex-direction: column;    /* Empile les miniatures et l'image principale verticalement */
+  flex-direction:row;    /* Empile les miniatures et l'image principale verticalement */
   align-items: center;       /* Centre horizontalement les éléments dans la galerie */
   width: 46%;                /* Détermine la largeur de la galerie */
-  margin-left: 25%;         /* Décale la galerie à gauche */
+  margin-left: 10%;         /* Décale la galerie à gauche */
 }
 
 .thumbnails {
   display: flex;             /* Active Flexbox pour les miniatures */
   gap: 0.5rem;               /* Espace entre les miniatures */
   width: 100%;              /* Les miniatures prennent toute la largeur disponible */
-  justify-content: center;  /* Centre horizontalement les miniatures */
+  flex-direction: column;  /* Empile les miniatures verticalement */
+  align-items: center;     /* Centre horizontalement les miniatures */
 }
 
 .thumbnail {
@@ -65,46 +60,15 @@
   transform: scale(1.1);     /* Agrandit légèrement les miniatures au survol */
   border-color: #000;        /* Change la couleur de la bordure au survol */
 }
-
-.main-image img {
-  width: 100%;              /* L'image principale prend toute la largeur disponible */
-  max-width: 400px;          /* Limite la largeur maximale de l'image */
-  height: auto;              /* La hauteur s'ajuste automatiquement */
-  object-fit: contain;      /* Assure que l'image principale est bien cadrée */
-  border: 1px solid #ccc;    /* Bordure de l'image principale */
-  border-radius: 10px;       /* Bords arrondis */
-  margin-top: 1rem;          /* Marge au-dessus de l'image */
-}
-
-.product-details {
-  width: 60%;                /* Détermine la largeur des détails du produit */
-}
-
-.product-details h1 {
-  font-size: 1.5rem;         /* Taille du titre */
-  margin-bottom: 1rem;      /* Marge sous le titre */
-}
-
 .price {
   font-size: 1.2rem;         /* Taille du prix */
   color: #333;               /* Couleur du prix */
   margin-bottom: 1rem;      /* Marge sous le prix */
 }
 
-.product-options {
-  display: flex;             /* Active Flexbox pour les options */
-  flex-direction: column;    /* Empile les options verticalement */
-  gap: 1rem;                /* Espace entre les options */
-  margin-bottom: 1rem;      /* Marge sous les options */
-}
-
 .option label {
   display: block;             /* Étiquette sur une ligne séparée */
   font-weight: bold;        /* Met l'étiquette en gras */
-}
-
-.quantity {
-  margin-bottom: 1rem;      /* Marge sous la quantité */
 }
 
 .add-to-cart {
@@ -124,9 +88,12 @@
 /* Correction pour .imgproduit (image principale) */
 .imgproduit {
   display: block;         /* S'assure que l'image est un élément de bloc */
-  margin-left: 0%;         /* Supprime la marge à gauche qui poussait l'image */
-  width: 50%;
+  margin-left: -5%;         /* Supprime la marge à gauche qui poussait l'image */
+  width: 90%;
   height: auto;
+  border: 1px solid #ccc;    /* Bordure de l'image principale */
+  border-radius: 10px; 
+  top: -50px;
 }
 /* Style général de la section des détails du produit */
 .product-details {
@@ -135,8 +102,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    margin-left: 30px;
-    width: 350px; /* Limiter la largeur pour un meilleur aspect */
+    width: 650px; /* Limiter la largeur pour un meilleur aspect */
 }
 
 /* Style du titre du produit */
@@ -155,7 +121,7 @@
 
 /* Style des options du produit (couleur, taille, etc.) */
 .product-options {
-    display: flex;  /* Afficher les options sur une seule ligne */
+    /* Afficher les options sur une seule ligne */
     flex-wrap: wrap; /* Permettre aux options de passer à la ligne si l'espace est insuffisant */
     gap: 15px;      /* Espacement entre les options */
     margin-bottom: 20px;
@@ -185,8 +151,7 @@
 
 /* Style de la quantité */
 .quantity {
-    display: flex;
-    align-items: center;
+  
     margin-bottom: 20px;
 }
 
@@ -220,9 +185,50 @@
 }
 
 /* Style de la description */
-.product-details .description {
+.product-details .descriptiontitle {
     font-size: 1em;
-    line-height: 1.5;
+    margin-bottom: 10px;
     color: #555;
-    margin-bottom: 15px;
+}
+.product-details .description {
+    line-height: 25px;
+}
+
+.faq-question {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.faq-question.active{
+  color: red;
+}
+
+/* Style de la réponse (masquée par défaut) */
+.faq-answer {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+  padding: 10px;
+  display: none; /* Masquer la réponse par défaut */
+}
+
+/* Style de la réponse lorsqu'elle est visible */
+.faq-answer.show {
+  display: block; /* Afficher la réponse */
+}
+.faq-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid #ccc;
+}
+
+/* Style de chaque élément de la liste */
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
 }

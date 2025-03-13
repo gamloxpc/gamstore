@@ -1,3 +1,20 @@
+// Attendre que le DOM soit complètement chargé
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionner toutes les miniatures et l'image principale
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.getElementById('main-image');
+    console.log("Image principale cliqué pour:", this.src);
+    // Ajouter un écouteur d'événement à chaque miniature
+    thumbnails.forEach(thumbnail => {
+        console.log("Image principale cliqué pour:", this.src);
+        thumbnail.addEventListener('click', function() {
+            // Changer la source de l'image principale avec la source de la miniature cliquée
+            mainImage.src = this.src;
+            mainImage.alt = this.alt;
+            console.log("Image principale changée pour:", this.src);
+        });
+    });
+});
 // Initialiser un tableau pour le panier
 let cart = [];
 
@@ -200,18 +217,3 @@ shopLink.addEventListener('click', (e) => {
 });
 // Charger le panier au chargement de la page
 window.addEventListener('load', LoadCart);
-
-// Attendre que le DOM soit complètement chargé
-document.addEventListener('DOMContentLoaded', function() {
-    // Sélectionner toutes les miniatures et l'image principale
-    const thumbnails = document.querySelectorAll('.thumbnail');
-    const mainImage = document.getElementById('main-image');
-
-    // Ajouter un écouteur d'événement à chaque miniature
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-            // Changer la source de l'image principale avec la source de la miniature cliquée
-            mainImage.src = this.src;
-        });
-    });
-});

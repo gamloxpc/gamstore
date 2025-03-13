@@ -11,17 +11,29 @@
 <body>
 
     <header>
-        <h1 class="title_gamstore">GamStore</h1>  
-        <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Rechercher un produit...">
-            <div  id="search-results"></div>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+   <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
         </div>
-        <nav class="menu"> 
-            <a class="texte_barre" href="index.html">Accueil</a>
-            <a class="texte_barre" href="produit.html">Produits</a>
-            <a class="texte_barre" href="contact.html">Contact</a>
-            <a href="#" id="cart-link">🛒<span id="cart-count">0</span></a>   
-    </nav">
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+                <a href="#" id="cart-link" class="menu-icon-link">
+                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
+                    Mon panier (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -56,7 +68,7 @@
                         Q: Quels sont les délais de livraison ?
                     </div>
                     <div class="faq-answer">
-                        R: Les délais de livraison varient en fonction de votre localisation. Veuillez consulter notre page "Livraison" pour plus d'informations.
+                        R: 🚚 Les délais de livraison varient en fonction de votre localisation. Veuillez consulter notre page <a href="livraison.html">"Livraison"</a> pour plus d'informations.
                     </div>
                 </li>
                 <li class="faq-item">
@@ -90,7 +102,7 @@
                 </div>
                 <div class="faq-answer">
                    R : 🛑 Une fois la commande validée, elle est immédiatement traitée.
-                    Toute modification ou annulation doit être demandée dans les 24h après achat AVANT l'expédition de votre colis! Contacte-nous vite via notre formulaire de contact !
+                    Toute modification ou annulation doit être demandée dans les 24h après achat AVANT l'expédition de votre colis! Contacte-nous vite via notre formulaire de contact ou par téléphone !
 
                 </div>
             </li>
@@ -100,7 +112,7 @@
                 </div>
                 <div class="faq-answer">
                     📍 Dès l’expédition, tu reçois un email avec un numéro de suivi.<br>
-                    Tu peux suivre l’avancement sur notre page "Suivi de commande".
+                    Tu peux suivre l’avancement sur notre page "Suivi de commande" ou consulter ses mails réçu par la solution du transporter.
                 </div>
         </section>
     </main>

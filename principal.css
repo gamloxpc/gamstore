@@ -1,42 +1,65 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: AvenirNext, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: white;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 1px;
-    text-align: center;
-    margin: 0;
-    position: relative;
-    top: -30px;
-    
+    /* Stylisation générale de l'en-tête */
+    display: flex;
+  padding: 20px;
+    background-color: white;
+    border: 1px solid red;
+    height: 40px; /* Augmente la hauteur de l'en-tête */
 }
-header nav {
-    position: absolute;
-    left: 10%;
-    transform: translateX(-50%);
-}
-header nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+.title_gamstore{
+   text-align: center;
+    color: red;
     position: relative;
-    top:-35px;
+    top: -20px;
+    left: 20%;
+}
+.header-bottom {
+    display: flex;         /* Utilise Flexbox pour aligner le menu et les icônes */
+    width: 100%;          /* S'étend sur toute la largeur de l'en-tête */
+}
+
+/* Menu de navigation */
+.menu {
+    display: flex;
+    padding: 20px;
+    /* Pas besoin de 'top: -100px;' ici */
 }
 
 .texte_barre {
-    font-size: 25px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333; 
+     font-size: .875rem;
+    text-transform: uppercase;
+    font-weight: 700;
 }
-/* Style du panier */
-#cart-link {
-    position: relative;
-    cursor: pointer;
-    left: 375%;
 
+/* Style du panier */
+.menu-icons {
+    display: flex;
+    align-items: center;
+    left: 35%;
+}
+
+.menu-icon-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px; /* Réduit un peu la marge */
+}
+
+.menu-icon {
+    width: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 #cart {
     position: fixed;
@@ -51,6 +74,7 @@ header nav a {
     display: none; /* Cacher par défaut */
     transition: transform 0.3s ease;
     transform: translateX(100%); /* Cache hors de l'écran */
+    border-left: 1px solid #ccc;
 
 }
 
@@ -121,100 +145,50 @@ header nav a {
 #Tshop.visible {
     display: block;
 }
+
 /*searchbar*/
-.container {
-    position: absolute;
-    left: 70%;
-    top: 45%;
-    transform: translate(-30%, -30%); /* Correction ici */
-    padding: 5px;
-    height: 80px; /* Correspond à la hauteur du bouton et de l'input */
-    display: flex; /* Pour un meilleur alignement des éléments */
-    align-items: center; /* Centre verticalement les éléments */
-}
 
-.input {
-    box-sizing: border-box;
-    height: 40px;
-    width: 0;
-    outline: none;
-    padding: 0 20px;
-    color: rgb(59, 23, 23);
-    font-size: 20px;
-    border: 1px solid #f4bf04;
-    border-radius: 50px;
-    transition: all 0.7s ease;
-}
-
-::placeholder {
-    color: grey;
-}
-
-.btn {
-    position: absolute;
-    right: 6px;
-    top: 40; /* Correction ici */
-    background: red;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none; /* Supprime la bordure par défaut des liens */
-    padding: 0; /* Supprime le padding par défaut des liens */
-    display: flex; /* Centre l'icône avec flexbox */
-    justify-content: center;
+/* Conteneur principal de la barre de recherche */
+.search-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
     align-items: center;
+    width: 80%; /* Prend toute la largeur disponible mais ne dépasse pas */
+    max-width: 300px; /* Limite sa taille */
+    margin: 0 auto; /* Centre le conteneur */
+    position: relative;
+    left: 230px;
+    top: 0px;
 }
 
-.btn i {
-    font-size: 25px;
-    color: white;
-    transition: all 0.5s ease;
-}
-
-.container:hover input {
-    width: 300px;
-}
-
-.container:hover .btn i {  /*Correction ici, important de cibler .btn i et non i seulement*/
-    transform: rotate(180deg);
-}
-#searchResults {
-    position: absolute; /* Permet de positionner précisément sous la barre de recherche */
-    top: 100%; /* Place le début de la zone de résultats juste en dessous de la barre de recherche */
-    left: 0; /* Aligne à gauche avec la barre de recherche */
-    width: 100%; /* Prend toute la largeur disponible */
-    background-color: rgb(254, 149, 149);
+/* Style de la barre de recherche */
+.search-box {
+    width: 100%; /* Remplit son conteneur */
+    max-width: 400px; /* Empêche qu'il soit trop large */
+    padding: 10px;
     border: 1px solid #ccc;
-    border-top: none; /* Supprime la bordure supérieure pour un aspect plus propre */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* S'assure que la zone de résultats est au-dessus des autres éléments */
-    display: none; /* Cache la zone par défaut jusqu'à ce qu'il y ait des résultats */
+    font-size: 16px;
+    background-color: rgba(255, 1, 1, 0.2);
+    border-radius: 35px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
-
-#searchResults ul {
-    list-style: none; /* Supprime les puces par défaut de la liste */
-    padding: 0;
-    margin: 0;
+.search-box::placeholder {
+    color: black;
 }
-
-#searchResults li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer; /* Indique que l'élément est cliquable */
-}
-
-#searchResults li:hover {
-    background-color: #f0f0f0; /* Change la couleur de fond au survol */
-}
-
-#searchResults p {
-    padding: 10px;
-    text-align: center;
-    color: #c65555;
-}
-.title_gamstore{
-    text-align: center;
-    color: red;
+/* Conteneur des résultats */
+.search-results {
+    position: absolute;
+    top: 45px;
+    width: 100%; /* Suit la largeur de la barre de recherche */
+    max-width: 270px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    height: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    color: #000000;
+    font-size: 20px;
+    z-index: 10;
 }

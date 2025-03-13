@@ -7,33 +7,43 @@
     <link rel="stylesheet" href="principal.css">
     <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
     <link rel="stylesheet" href="commande.css">
-             <script type="text/javascript" 
-                     src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>  
-             <!-- Widget MR -->
-             <script type="text/javascript"   
-                     src="https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script>    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <!-- Leaflet dependency is not required since it is loaded by the plugin -->
+    <script src="//unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="//unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- JS plugin for the Parcelshop Picker Widget MR using JQuery -->
+    <script src="//widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script>
 </head>
 <body>
     <header>
-        <h1 class="title_gamstore">GamStore</h1>
-        <div class="container">
-            <input type="text" name="search" placeholder="Search..." class="input" id="searchInput" />
-            <a href="#" class="btn">
-              <i class="fas fa-search"></i>
-            </a>
-           <div id="searchResults"></div> 
-          </div>
-        <nav class="menu"> 
-            <a class="texte_barre" href="index.html">Accueil</a>
-            <a class="texte_barre" href="produit.html">Produits</a>
-            <a class="texte_barre" href="contact.html">Contact</a>
-            <a href="#" id="cart-link">
-                🛒 <span id="cart-count">0</span>
-            </a>
-        </nav>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+   <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+                <a href="#" id="cart-link" class="menu-icon-link">
+                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
+                    Mon panier (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
     </header>
         <h2>Votre Commande</h2>
-        <div class="order-container">
+          <div class="order-container">
             <div class="order-summary">
                 <h2>Récapitulatif de votre commande</h2>
                 <ul id="order-items"></ul>
@@ -41,6 +51,31 @@
                 <div class="shipping">Expédition : <span id="shipping-cost">0.00</span>€</div>
                 <div class="total">Total : <span id="order-total">0.00</span>€</div>
             </div>
+        <form id="order-form" method="post">
+            <label>Mode de livraison :</label>
+            <div class="formLivraison">
+                
+                <input type="radio" id="standard" name="delivery_method" value="standard" checked>
+                <label for="standard">Livraison standard à domicile</label><br>
+                <input type="radio" id="mondial_relay_pr" name="delivery_method" value="mondial_relay_pr">
+                <label for="mondial_relay_pr">Mondial Relay en point relais</label>
+            </div>
+            
+       
+      <div id="Zone_Widget" display="none">
+
+            <!-- HTML element to display the parcelshop selected, for demo only. Should use hidden instead. -->
+            <input type="text" id="Target_Widget" />
+            <div class="form-group">
+                <label for="relay_point">Point de retrait :</label>
+                <select id="relay_point" name="relay_point">
+                    <!-- Les options seront ajoutées ici par JavaScript -->
+                </select>
+            </div>
+        </div>
+        </form>
+  
+              
         
             <form id="order-form" action="traitementCommande.php" method="post">
               
@@ -80,11 +115,12 @@
                 <!-- Ajout de la case à cocher -->
                 <div class="form-group terms-group">
                     <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">J'accepte les <a href="conditionVente.html" target="_blank">conditions générales de vente</a></label>
+                    <label for="terms">J'accepte les <a href="conditionVente.html" target="_blank">conditions générales de vente</a> et les <a href="conditionUtilisation"> conditions générales d'utilisation</a></label>
                 </div>
         
                 <button type="submit">Confirmer la commande</button>
             </form>
+        </div>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -113,7 +149,35 @@
                     orderSubtotalElement.textContent = subtotalPrice.toFixed(2);
                     orderTotalElement.textContent = totalPrice.toFixed(2);
                 });
+    const mondialRelayOptions = document.getElementById('Zone_Widget'); // Supposon
+    const addressFields = document.getElementById('address_fields'); // Supposons que vous avez cette section pour l'adresse
+    const deliveryMethodRadios = document.querySelectorAll('input[name="delivery_method"]');
+
+    // Fonction pour afficher/masquer les options et champs en fonction du mode de livraison
+    function toggleDeliveryOptions() {
+        const selectedMethod = document.querySelector('input[name="delivery_method"]:checked').value;
+
+        if (selectedMethod === 'mondial_relay_pr') {
+            mondialRelayOptions.style.display = 'block';
+            // On appelle la fonction pour afficher le widget Mondial Relay
+            // Cette fonction doit être définie dans le code fourni par Mondial Relay
+            // ou dans un fichier JS que vous avez créé pour gérer le widget.
+            afficherWidgetMondialRelay();  // ** À ADAPTER SELON LA DOCUMENTATION DE MONDIAL RELAY **
+        } else {
+            mondialRelayOptions.style.display = 'none';
+             addressFields.style.display = 'block'; // Afficher les champs d'adresse
+        }
+    }
+
+    // Attacher un écouteur d'événements à chaque radio button
+    deliveryMethodRadios.forEach(radio => {
+        radio.addEventListener('change', toggleDeliveryOptions);
+    });
+
+    // Initialiser l'affichage au chargement de la page
+    toggleDeliveryOptions();
             </script>
+
             </div>
             </main>
 
@@ -135,7 +199,7 @@
             <li><a href="/livraison" style="color:#fff; text-decoration:none;">Livraison</a></li>
             <li><a href="/retours" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
             <li><a href="/paiement-securise" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
-            <li><a href="/faq" style="color:#fff; text-decoration:none;">FAQ</a></li>
+            <li><a href="faq.html" style="color:#fff; text-decoration:none;">FAQ</a></li>
         </ul>
     </div>
 
@@ -157,6 +221,12 @@
         <p><a href="/conditions-generales" style="color:#fff; text-decoration:none;">Conditions générales de vente</a> | <a href="/politique-confidentialite" style="color:#fff; text-decoration:none;">Politique de confidentialité</a> | <a href="/mentions-legales" style="color:#fff; text-decoration:none;">Mentions légales</a></p>
     </div>
 
+<!--On charge Jquery depuis le CDN de google-->  
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><!--On charge Google Map API-->  
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<your_googleapi_key>"></script>  
+  
+<!--On charge le widget mondial relay depuis leurs serveurs-->  
+<script type="text/javascript" src="https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script> 
 </div>
 </footer>
         <script src="script.js"></script>

@@ -1,0 +1,47 @@
+/* Style du conteneur principal */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des titres de section */
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style des sous-titres */
+h3 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style des options de livraison */
+.delivery-options {
+    margin-bottom: 20px;
+}
+
+/* Style des tableaux de tarifs */
+table.tarifs {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table.tarifs th, table.tarifs td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.tarifs th {
+    background-color: #f2f2f2;
+}
+
+table.tarifs tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

@@ -5,24 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>t-shirt</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produit.css">
+    <link rel="stylesheet" href="principal.css">
+    <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
+    
 </head>
 <body>
     <header>
-        <h2>Bienvenue sur Ma Boutique</h2>
-        <nav class="menu"> 
-            <a class="texte_barre" href="index.html">Accueil</a>
-            <a class="texte_barre" href="produit.html">Produits</a>
-
-            <a href="#" id="cart-link">
-                🛒 <span id="cart-count">0</span>
-                
-            </a>
-        </nav>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+   <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+                <a href="#" id="cart-link" class="menu-icon-link">
+                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
+                    Mon panier (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
     </header>
     <main>
         
     <h1>T-shirt</h1>
-    <img src="téléchargement.png" alt="T-shirt" style="width:300px;">
+    <img src="casquette1.png" alt="T-shirt" style="width:300px;">
     <p>Prix : 19,99€</p>
     <button onclick="addToCart('T-shirt','19,99')">Ajouter au panier</button>     
        

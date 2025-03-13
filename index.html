@@ -10,36 +10,47 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="top-banner">
+        <p>Livraison GRATUITE dès 60,00€ d'achats Livraison - <a href="livraison.html">En savoir plus</a></p>
+        <a href="#" class="close-banner">X</a>
+    </div>
     <header>
-        <h1 class="title_gamstore">GamStore</h1>
-        <div class="container">
-            <input type="text" name="search" placeholder="Search..." class="input" id="searchInput" />
-            <a href="#" class="btn">
-              <i class="fas fa-search"></i>
-            </a>
-           <div id="searchResults"></div> 
-          </div>
-        <nav class="menu"> 
-            <a class="texte_barre" href="index.html">Accueil</a>
-            <a class="texte_barre" href="produit.html">Produits</a>
-            <a class="texte_barre" href="contact.html">Contact</a>
-            <a href="#" id="cart-link">
-                🛒 <span id="cart-count">0</span>
-            </a>
-        </nav>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+   <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+                <a href="#" id="cart-link" class="menu-icon-link">
+                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
+                    Mon panier (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
     </header>
     <main>
        <h2>Nos Dernière nouvauté !!</h2> 
         <section id="products">
          
             <div class="produit">
-                <img src="téléchargement.png" alt="T-shirt">
+                <img src="casquette1.png" alt="T-shirt">
                 <h3>T-shirt</h3>
                 <p>19.99€</p>
                 <button><a href="T-shirt.html"> Commander</a></button>
             </div>
             <div class="produit" data-name="Hoodie" data-price="50">
-                <img src="téléchargement.png" alt="Hoodie">
+                <img src="casquette1.png" alt="Hoodie">
                 <h3>Hoodie</h3>
                 <p>50€</p>
                 <button>Ajouter au panier</button>
@@ -51,7 +62,7 @@
             <p>Total : <span id="cart-total">0</span>€</p>
             <button><a href="commande.html">Commander</a></button>
         </section>
-    </main>  
+    </main>  <br>
 
     <section class="faq">
         <h2>Foire Aux Questions (FAQ)</h2>
@@ -145,6 +156,17 @@
     <script src="script.js"></script>
     <script src="search.js"></script>
     <script src="faq.js"></script>
+    <script >document.addEventListener('DOMContentLoaded', function() {
+        const closeBanner = document.querySelector('.top-banner .close-banner');
+        const topBanner = document.querySelector('.top-banner');
+    
+        if (closeBanner && topBanner) {
+            closeBanner.addEventListener('click', function(event) {
+                event.preventDefault(); // Empêcher le lien de naviguer
+                topBanner.style.display = 'none'; // Cacher le bandeau
+            });
+        }
+    });</script>
 
 </body>
 </html>
