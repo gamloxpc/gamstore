@@ -1,135 +1,185 @@
-/* Style général du formulaire */
-#order-form {
-    max-width: 400px; /* Ajuster la largeur du formulaire */
-    margin: 20px;
+/* Style général de la page */
+.commande-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;              /* Active Flexbox */
+    justify-content: space-between;  /* Espacement entre les colonnes */
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
 }
 
-/* Style du conteneur principal */
-.order-container {
-    display: flex;          /* Active Flexbox */
-    justify-content: space-between; /* Aligne les éléments horizontalement */
-
-    
-
+/* Style des colonnes */
+.commande-page .colonne-gauche {
+    width: 55%;                 /* Colonne de gauche plus large */
 }
 
-/* Style du récapitulatif de la commande */
-.order-summary {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    max-width: 45%;
+.commande-page .colonne-droite {
+    width: 40%;                 /* Colonne de droite plus étroite */
 }
 
-/* Style des groupes de champs */
-.form-group {
-    margin-bottom: 15px;
+/* Style des sections */
+.commande-page section {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;        /* Espacement entre les sections */
 }
-
-/* Style des étiquettes */
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-/* Style des champs de saisie */
-#order-form input[type="text"],
-#order-form input[type="email"],
-#order-form input[type="tel"] {
-    width: 100%;
-    padding: 8px;
+.info-client input {
+    width: 95%;                /* Prend toute la largeur disponible */
+    padding: 10px;
+    margin-bottom: 15px;        /* Espacement entre les champs */
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 1em;
+
 }
 
-/* Style du bouton de soumission */
-#order-form button[type="submit"] {
-    background-color: #4CAF50; /* Vert */
+/* Style du titre des sections */
+.commande-page section h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Style du bouton Commander */
+.commande-page .btn-commander {
+    background-color: #5cb85c; /* Vert */
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 100%;                /* Prend toute la largeur disponible */
+    margin-top: 15px;           /* Espacement au-dessus du bouton */
 }
 
-#order-form button[type="submit"]:hover {
-    background-color: #3e8e41;
+.commande-page .btn-commander:hover {
+    background-color: #449d44; /* Vert plus foncé */
 }
-
-/* Style pour le conteneur de la case à cocher et du label (Flexbox) */
-.form-group.terms-group {
-    display: flex;          /* Active Flexbox */
-    align-items: center;   /* Centre verticalement */
+.choisisPays {
     margin-bottom: 15px;
 }
 
-/* Style de la case à cocher */
-.form-group.terms-group input[type="checkbox"] {
-    margin-right: 5px;    /* Espacement entre la case et le texte */
-}
-
-/* Style des champs Prénom et Nom */
-.form-group.name-group {
-    display: flex;
-    gap: 10px;
-}
-
-.form-group.name-group .prenom {
-    flex: 1;
-}
-
-.form-group.name-group .nom {
-    flex: 1;
-}
-/* Style général pour la section de sélection du mode de livraison */
-.form-group {
-    margin-bottom: 15px;
-}
-
-/* Style pour le label principal */
-.form-group > label {
+.choisisPays label {
     display: block;
+    font-weight: bold;
     margin-bottom: 5px;
+    color: #555;
+}
+
+.choisisPays select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+/* Style du groupe entier */
+.newsletter-group {
+    display: flex;             /* Flexbox pour aligner la checkbox et le texte */
+    align-items: flex-start;   /* Aligner en haut */
+    border-radius: 8px;
+}
+
+/* Style de la checkbox */
+.newsletter-group input[type="checkbox"] {
+    margin-right: 10px;       /* Espacement à droite de la checkbox */
+    width: auto;              /* Remettre la largeur à auto */
+    height: auto;             /* Remettre la hauteur à auto */
+    position: relative;
+    top: 4px;             /* Ajuster l'alignement vertical */
+}
+
+/* Style de la description */
+.newsletter-group label {
+    flex-grow: 1;             /* Permet au texte de prendre toute la place disponible */
+    font-size: 1em;          /* Taille de la police */
+    color: #777;
+    line-height: 1.4;         /* Hauteur de ligne pour une meilleure lisibilité */
+}
+.articleImage {
+    width: 50px;           /* Largeur fixe de l'image */
+    margin-right: 15px;    /* Espacement à droite de l'image */
+}
+.articleImage img {
+    display: block;        /* Supprime l'espace en dessous de l'image */
+    width: 100%;            /* Prend toute la largeur disponible */
+    height: auto;
+}
+.articleDetails {
+    flex-grow: 1;
+    margin-left: 20px;    /* Espacement à droite du texte */
+}
+.articleDetails h3 {
+    margin: 0;            /* Supprime la marge par défaut */
+    font-size: 1.2em;      /* Taille de la police */
+    color: #333;
     font-weight: bold;
 }
 
-/* Style pour le conteneur de chaque option (radio button + label) */
+.articleDetails p {
+    margin: 3px 0;        /* Espacement en haut et en bas */
+    color: #777;
+    font-size: 0.9em;
+}
+.terms-container {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.terms-container a {
+    color: #7b61ff;
+    text-decoration: none;
+}
+
+.terms-container a:hover {
+    text-decoration: underline;
+}
+.messageErreur {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}/* Style du groupe d'options de livraison */
 .delivery-option {
-    display: flex;          /* Utilise Flexbox pour l'alignement */
-    align-items: center;    /* Centre verticalement */
-    margin-bottom: 8px;      /* Espacement entre les options */
+    margin-bottom: 10px;
 }
 
-/* Style pour les radio buttons */
-.delivery-option input[type="radio"] {
-    margin-right: 8px;      /* Espacement entre la puce et le label */
-}
-
-/* Style pour les labels associés aux radio buttons */
 .delivery-option label {
-    font-weight: normal;   /* Police normale */
-    margin-bottom: 0;        /* Supprime la marge par défaut */
-    cursor: pointer;        /* Change le curseur au survol */
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
-/* Style pour les options Mondial Relay (cachées par défaut) */
-.mondial_relay_pr {
+/* Style des détails Mondial Relay */
+#mondial_relay_details {
     margin-top: 15px;
     padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #f9f9f9;
 }
-/*style de la div*/
-#mondial_relay_options > div{
-    margin-left:20px;
-    display: grid;
+
+/* Style des détails Colissimo */
+#colissimo_details {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Style des boutons */
+.btnLivraison {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnLivraison:hover {
+    background-color: #e0e0e0;
 }

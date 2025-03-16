@@ -1,0 +1,230 @@
+/* Style général de la page */
+.panier-page {
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.titlePanier{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+/* Style du conteneur principal */
+.panier-contenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Section des articles du panier */
+.panier-articles {
+    width: 65%;
+}
+/* Récapitulatif de la commande */
+.panier-recap {
+    width: 30%;
+}
+
+.recap-box {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+}
+.recap-box h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+.recap-box  a {
+    text-decoration: none;
+
+}
+.recap-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #777;
+}
+
+.recap-line.total {
+    border-top: 1px solid #eee; 
+    padding-top: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.recap-info {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 15px;
+}
+
+/* Options d'achat */
+.panier-actions {
+    margin-top: 20px;
+}
+
+.panier-articles h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style de chaque article */
+#cart-items li {
+    display: flex;               /* Flexbox pour l'alignement */
+    align-items: flex-start;        /* Centre verticalement */
+    padding: 15px;             /* Espacement intérieur */
+    border-bottom: 1px solid #eee; /* Ligne de séparation */
+    position: relative; /* Pour positionner le prix absolument */
+    
+}
+
+/* Style de l'image de l'article */
+.article-image {
+    margin-right: 15px;        /* Espacement à droite */
+    width: 150px;
+    height: 150px;
+}
+
+.article-image img {
+    display: block;            /* Supprime l'espace en dessous de l'image */
+    max-width: 100px;           /* Largeur maximale de l'image */
+    height: auto;             /* Hauteur automatique */
+    align-items: center;
+}
+
+/* Style des détails de l'article */
+.article-details {
+    flex-grow: 1;              /* Prend l'espace disponible */
+    margin-top: -20px;
+}
+.article-price {
+    position: absolute; /* Positionnement absolu */
+    top: 15px;           /* Aligner en haut */
+    right: 15px;         /* Aligner à droite */
+    font-size: 1.2em;         /* Taille de la police */
+    font-weight: bold;
+    color: #333;
+}
+.article-details h3 {
+    margin: 0;                /* Supprime la marge par défaut */
+    font-size: 1.2em;         /* Taille de la police */
+    color: #333;
+    text-transform: capitalize;
+}
+
+
+.article-details p {
+    margin: 5px 0;            /* Espacement en haut et en bas */
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Style des actions sur l'article (Modifier, Supprimer) */
+.article-actions a {
+    margin-top: auto;
+    color: #ff0202;
+    text-decoration: underline;
+    margin-right: 15px;       /* Espacement entre les liens */
+    font-size: 0.8em;
+}
+/* Style du prix de l'article */
+.panier-actions button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.panier-actions .btn-acheter {
+    background-color: red; /* Bleu */
+    color: white;
+}
+
+.panier-actions .btn-acheter-sans-inscription {
+    background-color: #f0f0f0; /* Gris clair */
+    color: #333;
+    border: 1px solid #ccc;
+}
+.panier-actions .btn-acheter-sans-inscription:hover {
+    background-color: #a0a0a0; /* Gris plus foncé */
+}
+.panier-actions button:hover {
+    background-color: rgb(165, 31, 31); /* Bleu plus foncé */
+    color: white;
+}
+
+/* Code promo */
+.code-promo {
+    margin-top: 30px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+.code-promo input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60%;
+    margin-right: 10px;
+}
+
+.code-promo button {
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color: red;
+    cursor: pointer;
+}
+/* Style général du conteneur */
+.livraison-gratuite-progress {
+    background-color: #f0f8ff; /* Bleu très clair */
+    border: 1px solid #d0e0ef;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style des paragraphes de texte */
+.livraison-gratuite-progress p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Style de la barre de progression */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden; /* Important pour cacher le reste de la barre */
+}
+
+/* Style de la barre interne (qui se remplit) */
+.progress-bar-inner {
+    height: 100%;
+    background: linear-gradient(to right, #00bfff, red); /* Dégradé bleu-vert */
+    border-radius: 6px;
+    width: 0%; /* Initialement vide */
+    transition: width 0.5s ease; /* Transition sur la largeur */
+}
+
+/* Style des valeurs de début et de fin */
+.progress-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: red;
+    margin-top: 5px;
+}

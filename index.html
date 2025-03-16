@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue sur GamStore</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="icon.jpg"/>
+    <link rel="shortcut icon" type="image/png" href="logo.png"/>
     <link rel="stylesheet" href="principal.css">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -53,23 +53,27 @@
         <section id="products">
          
             <div class="produit">
-                <img src="casquette1.png" alt="T-shirt">
-                <h3>T-shirt</h3>
-                <p>19.99€</p>
-                <button><a href="T-shirt.html"> Commander</a></button>
+                <a href="T-shirt.html">
+                    <img src="casquette1.png" alt="T-shirt">
+                <div class="produit-details">
+                    <h3>T-shirt</h3></a>
+                    <p class="produit-prix">19.99€</p>
+                </div>
             </div>
-            <div class="produit" data-name="Hoodie" data-price="50">
-                <img src="casquette1.png" alt="Hoodie">
-                <h3>Hoodie</h3>
-                <p>50€</p>
-                <button>Ajouter au panier</button>
+            <div class="produit">
+                <a href="casquette.html">
+                    <img src="casquette1.png" alt="casquette">
+                <div class="produit-details">
+                    <h3>casquette</h3></a>
+                    <p class="produit-prix">9.99€</p>
+                </div>
             </div>
         </section>
         <section id="cart" style="display: none;">
             <h2>Votre Panier</h2>
             <ul id="cart-items"></ul>
             <p>Total : <span id="cart-total">0</span>€</p>
-            <button><a href="commande.html">Commander</a></button>
+            <button class="validerCommandeBtn"><a class="validerCommandeBtn" href="panier.html">Valider le panier</a></button>
         </section>
     </main>  <br>
 
@@ -129,15 +133,15 @@
             <div style="width:30%; min-width:250px;">
                 <h3>À propos de nous</h3>
                 <p>Courte description de votre entreprise et de ce que vous vendez. Mettez en avant votre mission et vos valeurs.</p>
-                <p><a href="/a-propos" style="color:#fff; text-decoration:none;">En savoir plus</a></p>
+                <p><a href="aPropos.html" style="color:#fff; text-decoration:none;">En savoir plus</a></p>
             </div>
     
             <div style="width:30%; min-width:250px;">
                 <h3>Informations utiles</h3>
                 <ul>
-                    <li><a href="/livraison" style="color:#fff; text-decoration:none;">Livraison</a></li>
-                    <li><a href="/retours" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
-                    <li><a href="/paiement-securise" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
+                    <li><a href="livraison.html" style="color:#fff; text-decoration:none;">Livraison</a></li>
+                    <li><a href="retours.html" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
+                    <li><a href="paiement-securise.html" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
                     <li><a href="faq.html" style="color:#fff; text-decoration:none;">FAQ</a></li>
                 </ul>
             </div>
@@ -156,8 +160,8 @@
             </div>
     
             <div style="width:100%; text-align:center; margin-top:20px; font-size:0.8em;">
-                <p>© 2024 Votre Boutique. Tous droits réservés.</p>
-                <p><a href="conditionVente.html" style="color:#fff; text-decoration:none;">Conditions générales de vente</a> | <a href="/politique-confidentialite" style="color:#fff; text-decoration:none;">Politique de confidentialité</a> | <a href="/mentions-legales" style="color:#fff; text-decoration:none;">Mentions légales</a></p>
+                <p>© 2025 GamStore. Tous droits réservés.</p>
+                <p><a href="conditionVente.html" style="color:#fff; text-decoration:none;">Conditions générales de vente</a> | <a href="politique-confidentialite.html" style="color:#fff; text-decoration:none;">Politique de confidentialité</a> | <a href="mentions-legales.html" style="color:#fff; text-decoration:none;">Mentions légales</a></p>
             </div>
     
         </div>
@@ -165,17 +169,6 @@
     <script src="script.js"></script>
     <script src="search.js"></script>
     <script src="faq.js"></script>
-    <script >document.addEventListener('DOMContentLoaded', function() {
-        const closeBanner = document.querySelector('.top-banner .close-banner');
-        const topBanner = document.querySelector('.top-banner');
-    
-        if (closeBanner && topBanner) {
-            closeBanner.addEventListener('click', function(event) {
-                event.preventDefault(); // Empêcher le lien de naviguer
-                topBanner.style.display = 'none'; // Cacher le bandeau
-            });
-        }
-    });</script>
-
+    <script src="baner.js"></script>
 </body>
 </html>

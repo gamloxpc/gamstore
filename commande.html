@@ -44,154 +44,162 @@
                     <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
                     Connectez-vous | S'inscrire
                 </a>
-                <a href="#" id="cart-link" class="menu-icon-link">
-                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
-                    Mon panier (<span id="cart-count">0</span>)
-                </a>
             </div>
         </div>
     </header>
         <h2>Votre Commande</h2>
-          <div class="order-container">
-            <div class="order-summary">
-                <h2>Récapitulatif de votre commande</h2>
-                <ul id="order-items"></ul>
-                <div class="subtotal">Sous-total : <span id="order-subtotal">0.00</span>€</div>
-                <div class="shipping">Expédition : <span id="shipping-cost">0.00</span>€</div>
-                <div class="total">Total : <span id="order-total">0.00</span>€</div>
+        <div class="commande-page">
+            <div class="colonne-gauche">
+                <section class="info-client">
+                    <h2>Information client</h2>
+                    <input type="text" name="name" maxlength="50" id="Nom" placeholder="Nom *">
+                    <p id="errorMessageNom" class="messageErreur" style="color: red; display: none;">Veuillez rentré votre nom.</p>
+                    <input type="text" id="Prenom" placeholder="Prénom *">
+                    <p id="errorMessagePrenom" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre prénom.</p>
+                    <input type="email" id="Email" placeholder="Email *">
+                    <p id="errorMessageEmail" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre email.</p>
+                    <input type="tel" id="Telephone" placeholder="Téléphone *">
+                    <p id="errorMessageTel" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre numéro de téléphone.</p>
+                    <input type="text" id="Adresse" placeholder="Adresse *">
+                    <p id="errorMessageAdresse" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre adresse.</p>
+                    <input type="text" id="ComplementAdresse" placeholder="Complément d'adresse">
+                    <input type="text" id="Ville" placeholder="Ville *">
+                    <p id="errorMessageVille" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre ville.</p>
+                    <input type="text" id="CodePostal" placeholder="Code Postal *">
+                    <p id="errorMessageCodePostal" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre code postal.</p>
+                    <div class="choisisPays">
+                        <select id="pays" name="pays">
+                            <option value="" disabled selected>Sélectionner un pays</option>
+                            <option value="france">France</option>
+                            <option value="belgique">Belgique</option>
+                            <option value="suisse">Suisse</option>
+                            <option value="luxembourg">Luxembourg</option>
+                            <option value="allemagne">Allemagne</option>
+                            <option value="espagne">Espagne</option>
+                            <option value="italie">Italie</option>
+                            <!-- Ajoutez ici tous les autres pays -->
+                        </select>
+                    </div>
+                    <p id="errorMessagePays" class="messageErreur"  style="color: red; display: none;">Veuillez rentré votre pays.</p>
+                    <div class="newsletter-group">
+                        <input type="checkbox" id="addresseDifferente" name="addresseDifferente" value="addresseDifferente">
+                        <label for="addresseDifferente">
+                            Adresse de livraison différente de celle de facturation
+                        </label>
+                    </div>
+                    <div id="addresseDifferenteDetails" style="display: none;">
+                        <input type="text" name="name_destinataire" maxlength="50" id="Nom_destinataire" placeholder="Nom du destinataire *">
+                        <p id="errorMessageNom_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer le nom du destinataire.</p>
+                    
+                        <input type="text" id="Prenom_destinataire" name="prenom_destinataire" placeholder="Prénom du destinataire *">
+                        <p id="errorMessagePrenom_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer le prénom du destinataire.</p>
+                    
+                        <input type="email" id="Email_destinataire" name="email_destinataire" placeholder="Email du destinataire *">
+                        <p id="errorMessageEmail_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer l'email du destinataire.</p>
+                    
+                        <input type="tel" id="Telephone_destinataire" name="telephone_destinataire" placeholder="Téléphone du destinataire *">
+                        <p id="errorMessageTel_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer le numéro de téléphone du destinataire.</p>
+                    
+                        <input type="text" id="Adresse_destinataire" name="adresse_destinataire" placeholder="Adresse du destinataire *">
+                        <p id="errorMessageAdresse_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer l'adresse du destinataire.</p>
+                    
+                        <input type="text" id="ComplementAdresse_destinataire" name="complementAdresse_destinataire" placeholder="Complément d'adresse du destinataire">
+                    
+                        <input type="text" id="Ville_destinataire" name="ville_destinataire" placeholder="Ville du destinataire *">
+                        <p id="errorMessageVille_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer la ville du destinataire.</p>
+                    
+                        <input type="text" id="CodePostal_destinataire" name="codePostal_destinataire" placeholder="Code Postal du destinataire *">
+                        <p id="errorMessageCodePostal_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer le code postal du destinataire.</p>
+                    
+                        <div class="choisisPays">
+                            <label for="pays_destinataire">Pays du destinataire :</label>
+                            <select id="pays_destinataire" name="pays_destinataire">
+                                <option value="" disabled selected>Sélectionner un pays</option>
+                                <option value="france">France</option>
+                                <option value="belgique">Belgique</option>
+                                <option value="suisse">Suisse</option>
+                                <option value="luxembourg">Luxembourg</option>
+                                <option value="allemagne">Allemagne</option>
+                                <option value="espagne">Espagne</option>
+                                <option value="italie">Italie</option>
+                                <!-- Ajoutez ici tous les autres pays -->
+                            </select>
+                        </div>
+                        <p id="errorMessagePays_destinataire" class="messageErreur" style="color: red; display: none;">Veuillez rentrer le pays du destinataire.</p>
+                    </div>
+                    <div class="newsletter-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+                        <label for="newsletter">
+                            J'accepte de recevoir par mails des offres promotionnelles et des nouveautés des produits et services en rapport avec le groupe Gamlox Studio
+                        </label>
+                    </div>
+                    
+                </section>
+                <section class="paiement-securise">
+                    <h2>Paiement sécurisé</h2>
+                    <!-- Contenu : Options de paiement, logos de sécurité, etc. -->
+                </section>
             </div>
-        <form id="order-form" method="post">
-            <label>Mode de livraison :</label>
-            <div class="formLivraison">
-                
-                <input type="radio" id="standard" name="delivery_method" value="standard" checked>
-                <label for="standard">Livraison standard à domicile</label><br>
-                <input type="radio" id="mondial_relay_pr" name="delivery_method" value="mondial_relay_pr">
-                <label for="mondial_relay_pr">Mondial Relay en point relais</label>
-            </div>
-            
-       
-      <div id="Zone_Widget" display="none">
+        
+            <div class="colonne-droite">
+                <section class="recap-commande">
+                    <h2>Récapitulatif de votre commande</h2>
+                    <section class="panier-articles">
+                        <ul id="cart-items">
+                            <!-- Les articles seront ajoutés ici par JavaScript -->
+                        </ul>
+                    </section>
+                </section>
+                <section class="info-livraison">
+                    <div class="form-group">
+                        <label>Mode de livraison :</label>
+                    
+                        <div class="delivery-option">
+                            <input type="radio" id="mondial_relay_point" name="delivery_method" value="mondial_relay_point">
+                            <label for="mondial_relay_point">Point Relais Mondial Relay</label>
+                        </div>
+                    
+                        <div class="delivery-option">
+                            <input type="radio" id="mondial_relay_domicile" name="delivery_method" value="mondial_relay_domicile">
+                            <label for="mondial_relay_domicile">Domicile Mondial Relay</label>
+                        </div>
+                    
+                        <div class="delivery-option">
+                            <input type="radio" id="colissimo_domicile" name="delivery_method" value="colissimo_domicile">
+                            <label for="colissimo_domicile">Domicile Colissimo</label>
+                        </div>
+                    </div>
+                    
+                    <div id="mondial_relay_details" style="display: none;">
+                        <!-- Champs pour la livraison Mondial Relay -->
+                        <div class="form-group">
+                            <label for="mr_zip">Votre point relay :</label><br>
 
-            <!-- HTML element to display the parcelshop selected, for demo only. Should use hidden instead. -->
-            <input type="text" id="Target_Widget" />
-            <div class="form-group">
-                <label for="relay_point">Point de retrait :</label>
-                <select id="relay_point" name="relay_point">
-                    <!-- Les options seront ajoutées ici par JavaScript -->
-                </select>
+                            <button type="button" id="get_relay_points">Afficher les points de retrait</button>
+                        </div>
+                    </div>
+                    
+                    <div id="colissimo_details" style="display: none;">
+                        <!-- Champs pour la livraison Colissimo -->
+                    </div>
+                </section>
+
+
+                <section class="partie-legal">
+                    <div class="terms-container">
+                        <label>
+                            <input type="checkbox" id="termsCheckbox">
+                            J'accepte les <a href="#" target="_blank">Conditions Générales de Vente</a>, 
+                            la <a href="#" target="_blank">Politique de Confidentialité</a> et la 
+                            <a href="#" target="_blank">Politique de Retours</a>.
+                        </label>
+                    </div>
+                    
+                    <button id="payButton" class="btn-commander">Commander et Payer</button>
+                    <p id="errorMessageBtn" style="color: red; display: none;">Veuillez cocher la case pour accepter les conditions.</p>
+                </section>
             </div>
         </div>
-        </form>
-  
-              
-        
-            <form id="order-form" action="traitementCommande.php" method="post">
-              
-                <div class="form-group name-group">
-                    <div class="prenom">
-                        <input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required>
-                    </div>
-                    <div class="nom">
-                        <input type="text" id="lastName" name="lastName" placeholder="Votre nom" required>
-                    </div>
-                </div>
-                 <div class="form-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Numéro de téléphone" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="votre@email" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="address" name="address" placeholder="Adresse" required>
-                </div>
-        
-                <!-- Ajout du champ Complément d'adresse -->
-                <div class="form-group">
-                    <input type="text" id="address2" name="address2" placeholder="Complément d'adresse (facultatif)">
-                </div>
-        
-                <div class="form-group name-group">
-                    <div class="prenom">
-                        <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
-                    </div>
-                    <div class="nom">
-
-                        <input type="text" id="zip" name="zip" placeholder="code postal" required>
-                    </div>
-                </div>
-        
-                <!-- Ajout de la case à cocher -->
-                <div class="form-group terms-group">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">J'accepte les <a href="conditionVente.html" target="_blank">conditions générales de vente</a> et les <a href="conditionUtilisation"> conditions générales d'utilisation</a></label>
-                </div>
-        
-                <button type="submit">Confirmer la commande</button>
-            </form>
-        </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-                    const orderItemsElement = document.getElementById('order-items');
-                    const orderSubtotalElement = document.getElementById('order-subtotal');
-                    const shippingCostElement = document.getElementById('shipping-cost');
-                    const orderTotalElement = document.getElementById('order-total');
-            
-                    let subtotalPrice = 0;
-            
-                    cartItems.forEach(item => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `
-                            ${item.name} (Taille: ${item.size}, Couleur: ${item.color}) x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}€
-                        `;
-                        orderItemsElement.appendChild(li);
-                        subtotalPrice += item.price * item.quantity;
-                    });
-            
-                    // Simuler des frais de port (vous devrez adapter ceci)
-                    const shippingCost = subtotalPrice > 50 ? 0 : 5; // Livraison gratuite si le sous-total dépasse 50€
-                    shippingCostElement.textContent = shippingCost.toFixed(2);
-            
-                    const totalPrice = subtotalPrice + shippingCost;
-            
-                    orderSubtotalElement.textContent = subtotalPrice.toFixed(2);
-                    orderTotalElement.textContent = totalPrice.toFixed(2);
-                });
-    const mondialRelayOptions = document.getElementById('Zone_Widget'); // Supposon
-    const addressFields = document.getElementById('address_fields'); // Supposons que vous avez cette section pour l'adresse
-    const deliveryMethodRadios = document.querySelectorAll('input[name="delivery_method"]');
-
-    // Fonction pour afficher/masquer les options et champs en fonction du mode de livraison
-    function toggleDeliveryOptions() {
-        const selectedMethod = document.querySelector('input[name="delivery_method"]:checked').value;
-
-        if (selectedMethod === 'mondial_relay_pr') {
-            mondialRelayOptions.style.display = 'block';
-            // On appelle la fonction pour afficher le widget Mondial Relay
-            // Cette fonction doit être définie dans le code fourni par Mondial Relay
-            // ou dans un fichier JS que vous avez créé pour gérer le widget.
-            afficherWidgetMondialRelay();  // ** À ADAPTER SELON LA DOCUMENTATION DE MONDIAL RELAY **
-        } else {
-            mondialRelayOptions.style.display = 'none';
-             addressFields.style.display = 'block'; // Afficher les champs d'adresse
-        }
-    }
-
-    // Attacher un écouteur d'événements à chaque radio button
-    deliveryMethodRadios.forEach(radio => {
-        radio.addEventListener('change', toggleDeliveryOptions);
-    });
-
-    // Initialiser l'affichage au chargement de la page
-    toggleDeliveryOptions();
-            </script>
-
-            </div>
-            </main>
-
-<br><br><br><br><br><br><br><br>
-
 
 <footer style="background-color:#333; color:#fff; padding:20px;">
 <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
@@ -238,7 +246,314 @@
 <script type="text/javascript" src="https://widget.mondialrelay.com/parcelshop-picker/jquery.plugin.mondialrelay.parcelshoppicker.min.js"></script> 
 </div>
 </footer>
-        <script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const termsCheckbox = document.getElementById('termsCheckbox');
+    const payButton = document.getElementById('payButton');
+    const errorMessage = document.getElementById('errorMessageBtn');
+
+    const errorMessagePrenom = document.getElementById('errorMessagePrenom');
+    const errorMessageNom = document.getElementById('errorMessageNom');
+    const errorMessageEmail = document.getElementById('errorMessageEmail');
+    const errorMessageTel = document.getElementById('errorMessageTel');
+    const errorMessageAdresse = document.getElementById('errorMessageAdresse');
+    const errorMessageVille = document.getElementById('errorMessageVille');
+    const errorMessageCodePostal = document.getElementById('errorMessageCodePostal');
+    const errorMessagePays = document.getElementById('errorMessagePays');
+
+    const errorMessageNom_destinataire = document.getElementById('errorMessageNom_destinataire');
+    const errorMessagePrenom_destinataire = document.getElementById('errorMessagePrenom_destinataire');
+    const errorMessageEmail_destinataire = document.getElementById('errorMessageEmail_destinataire');
+    const errorMessageTel_destinataire = document.getElementById('errorMessageTel_destinataire');
+    const errorMessageAdresse_destinataire = document.getElementById('errorMessageAdresse_destinataire');
+    const errorMessageVille_destinataire = document.getElementById('errorMessageVille_destinataire');
+    const errorMessageCodePostal_destinataire = document.getElementById('errorMessageCodePostal_destinataire');
+    const errorMessagePays_destinataire = document.getElementById('errorMessagePays_destinataire');
+
+    const addresseDifferenteCheckbox = document.getElementById('addresseDifferente');
+    const addresseDifferenteDetails = document.getElementById('addresseDifferenteDetails');
+
+    // Fonction pour valider les champs du destinataire
+    function validerDestinataire() {
+        let isValid = true;
+
+        if (document.getElementById('Nom_destinataire').value === "") {
+            errorMessageNom_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessageNom_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('Prenom_destinataire').value === "") {
+            errorMessagePrenom_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessagePrenom_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('Email_destinataire').value === "") {
+            errorMessageEmail_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessageEmail_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('Telephone_destinataire').value === "") {
+            errorMessageTel_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessageTel_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('Adresse_destinataire').value === "") {
+            errorMessageAdresse_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessageAdresse_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('Ville_destinataire').value === "") {
+            errorMessageVille_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessageVille_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('CodePostal_destinataire').value === "") {
+            errorMessageCodePostal_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessageCodePostal_destinataire.style.display = 'none';
+        }
+        if (document.getElementById('pays_destinataire').value === "") {
+            errorMessagePays_destinataire.style.display = 'block';
+            isValid = false;
+        } else {
+            errorMessagePays_destinataire.style.display = 'none';
+        }
+
+        return isValid;
+    }
+
+    // Afficher/masquer les détails du destinataire
+    addresseDifferenteCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            addresseDifferenteDetails.style.display = 'block';
+        } else {
+            addresseDifferenteDetails.style.display = 'none';
+        }
+    });
+
+    // Validation du formulaire principal et du destinataire
+    payButton.addEventListener('click', (e) => {
+        let isFormValid = true;
+
+        // Validation des termes et conditions
+        if (!termsCheckbox.checked) {
+            e.preventDefault();
+            errorMessage.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessage.style.display = 'none';
+        }
+
+        // Validation des champs principaux
+        if (document.getElementById('Nom').value === "") {
+            errorMessagePrenom.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessagePrenom.style.display = 'none';
+        }
+        if (document.getElementById('Prenom').value === "") {
+            errorMessageNom.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessageNom.style.display = 'none';
+        }
+        if (document.getElementById('Email').value === "") {
+            errorMessageEmail.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessageEmail.style.display = 'none';
+        }
+        if (document.getElementById('Telephone').value === "") {
+            errorMessageTel.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessageTel.style.display = 'none';
+        }
+        if (document.getElementById('Adresse').value === "") {
+            errorMessageAdresse.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessageAdresse.style.display = 'none';
+        }
+        if (document.getElementById('Ville').value === "") {
+            errorMessageVille.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessageVille.style.display = 'none';
+        }
+        if (document.getElementById('CodePostal').value === "") {
+            errorMessageCodePostal.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessageCodePostal.style.display = 'none';
+        }
+        if (document.getElementById('pays').value === "") {
+            errorMessagePays.style.display = 'block';
+            isFormValid = false;
+        } else {
+            errorMessagePays.style.display = 'none';
+        }
+
+        // Validation des champs du destinataire si la checkbox est cochée
+        if (addresseDifferenteCheckbox.checked) {
+            if (!validerDestinataire()) {
+                isFormValid = false;
+                e.preventDefault();
+            }
+        }
+
+        // Si le formulaire est valide, afficher le message de confirmation
+        if (isFormValid) {
+            alert("Votre commande est en cours de traitement !");
+        } else {
+            e.preventDefault();
+        }
+    });
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const sousTotalElement = document.getElementById('sous-total'); // On récupére quand meme le sous total
+    const montantManquantElement = document.getElementById('montant-manquant');
+    const progressBarInner = document.getElementById('progress-bar-inner');
+    const livraisonGratuiteSeuil = 60; // Seuil pour la livraison gratuite
+    const livraisonGratuiteMessage = document.getElementById('livraison-gratuite-message'); // Ajout de la variable pour le message de livraison gratuite
+
+    let sousTotal = 0;
+
+    // Calculer le sous-total (comme avant)
+    cartItems.forEach(item => {
+        sousTotal += item.price * item.quantity;
+    });
+
+    // Calculer le montant manquant et le pourcentage de progression
+    const montantManquant = Math.max(0, livraisonGratuiteSeuil - sousTotal); // S'assurer que le montant ne soit pas négatif
+    const pourcentageAccompli = Math.min(100, (sousTotal / livraisonGratuiteSeuil) * 100); // Pourcentage entre 0 et 100
+
+    // Afficher les informations
+    montantManquantElement.textContent = montantManquant.toFixed(2) + "€";
+    progressBarInner.style.width = pourcentageAccompli + "%";
+    sousTotalElement.textContent = sousTotal.toFixed(2) + "€";  // On remet a jours la valeur du sousTotal
+    if (sousTotal >= livraisonGratuiteSeuil) {
+    montantManquantElement.parentNode.style.display = 'none'; // Cacher le message "Il manque..."
+    progressBarInner.parentNode.style.display = 'none';      // Cacher la barre de progression
+    document.querySelector(".progress-values").style.display = 'none'; // Cacher les valeurs (0 et 60)
+    livraisonGratuiteMessage.style.display = 'block';         // Afficher le message de félicitations
+} else {
+    montantManquantElement.parentNode.style.display = 'block'; // Afficher le message "Il manque..."
+    progressBarInner.parentNode.style.display = 'block';      // Afficher la barre de progression
+    document.querySelector(".progress-values").style.display = 'flex'; // Afficher les valeurs (0 et 60)
+    livraisonGratuiteMessage.style.display = 'none';         // Cacher le message de félicitations
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+const cartItemsElement = document.getElementById('cart-items');
+const sousTotalElement = document.getElementById('sous-total');
+const fraisExpeditionElement = document.getElementById('frais-expedition');
+const totalElement = document.getElementById('total');
+const cartCountElement = document.getElementById('cart-count');
+
+let sousTotal = 0;
+const fraisExpedition = 5.90;
+
+// Fonction pour obtenir l'URL de l'image en fonction du nom du produit
+function getProductImage(productName) {
+    switch (productName) {
+        case 'casquette':
+            return 'logo panier.png'; // Remplacez par l'URL réelle
+        case 'tshirt':
+            return 'url_vers_image_tshirt.jpg'; // Remplacez par l'URL réelle
+        case 'hoodie':
+            return 'url_vers_image_hoodie.jpg'; // Remplacez par l'URL réelle
+        default:
+            return 'url_vers_image_par_defaut.jpg'; // Image par défaut
+    }
+}
+
+   
+// Afficher les articles du panier
+cartItems.forEach(item => {
+    const li = document.createElement('li');
+    const imageUrl = getProductImage(item.name); // Obtenir l'URL de l'image 
+    if (item.size === undefined) {
+        item.size = 'Taille Standard';
+    }
+    li.innerHTML = `
+        <div class="articleImage">
+            <img src="${imageUrl}" alt="${item.name}" width="50">
+        </div>
+        <div class="articleDetails">
+            <h3>${item.name}</h3>
+            <p>Quantité: ${item.quantity}</p>
+            <p>Prix : ${(item.price * item.quantity).toFixed(2)}€</p>
+            <p>Taille: ${item.size},
+            <p>Couleur: ${item.color}</p>
+        </div>
+    `;
+    cartItemsElement.appendChild(li);
+    sousTotal += item.price * item.quantity;
+});
+
+// Calculer le total
+const total = sousTotal + fraisExpedition;
+
+// Afficher les totaux
+sousTotalElement.textContent = sousTotal.toFixed(2) + "€";
+fraisExpeditionElement.textContent = fraisExpedition.toFixed(2) + "€";
+totalElement.textContent = total.toFixed(2) + "€";
+ cartCountElement.textContent = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const mondialRelayPointRadio = document.getElementById('mondial_relay_point');
+    const mondialRelayDomicileRadio = document.getElementById('mondial_relay_domicile');
+    const colissimoDomicileRadio = document.getElementById('colissimo_domicile');
+
+    const mondialRelayDetails = document.getElementById('mondial_relay_details');
+    const colissimoDetails = document.getElementById('colissimo_details');
+
+    // Fonction pour masquer toutes les sections de détails
+    function hideAllDetails() {
+        mondialRelayDetails.style.display = 'none';
+        colissimoDetails.style.display = 'none';
+    }
+
+
+
+    // Ajouter des écouteurs d'événements
+    mondialRelayPointRadio.addEventListener('change', function() {
+        if (this.checked) {
+            hideAllDetails();
+            mondialRelayDetails.style.display = 'block';
+        }
+    });
+
+    mondialRelayDomicileRadio.addEventListener('change', function() {
+        if (this.checked) {
+            hideAllDetails();
+            mondialRelayDetails.style.display = 'none';
+            // Vous pouvez ajouter ici du code pour récupérer les frais de port
+            // Mondial Relay à domicile en fonction de l'adresse de l'utilisateur.
+        }
+    });
+
+    colissimoDomicileRadio.addEventListener('change', function() {
+        if (this.checked) {
+            hideAllDetails();
+            colissimoDetails.style.display = 'none';
+        }
+    });
+});</script>
         <script src="search.js"></script>
     </body>
     </html> 

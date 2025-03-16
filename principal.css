@@ -1,6 +1,7 @@
 body {
     font-family: AvenirNext, Helvetica, Arial, sans-serif;
     margin: 0;
+    margin-top: 30px;
     padding: 0;
     background-color: white;
 }
@@ -8,10 +9,19 @@ body {
 header {
     /* Stylisation générale de l'en-tête */
     display: flex;
-  padding: 20px;
+  padding: 15px;
     background-color: white;
-    border: 1px solid red;
+    border: 1px solid #ccc;
     height: 40px; /* Augmente la hauteur de l'en-tête */
+    position: fixed; /* Utiliser fixed au lieu de relative */
+    top: 0;          /* Coller en haut de la page */
+    left: 0;
+    width: 99%;       /* Prendre toute la largeur */
+    z-index: 100;       /* S'assurer qu'il est au-dessus des autres éléments */
+    transition: transform 0.3s ease-out; /* Pour un effet de glissement */
+}
+.header-hidden {
+    transform: translateY(-100%);
 }
 .title_gamstore{
    text-align: center;
@@ -40,7 +50,9 @@ header {
     text-transform: uppercase;
     font-weight: 700;
 }
-
+.texte_barre:hover {
+    color: red;
+}
 /* Style du panier */
 .menu-icons {
     display: flex;
@@ -120,6 +132,41 @@ header {
     padding: 5px 0;
     border-bottom: 1px solid #ccc;
 }
+.remove-btn{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.remove-btn:hover{
+    color: white;
+    text-decoration: underline;
+    background-color: rgb(192, 2, 2);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+.BtnPanier{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.validePanier{
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.BtnPanier:hover{
+    color: white;
+    text-decoration: underline;
+    background-color: rgb(192, 2, 2);
+    border-radius: 5px;
+    padding: 5px;
+}
 #Tshop {
     display: none;
     transition: all 0.3s ease-in-out;
@@ -144,6 +191,16 @@ header {
 
 #Tshop.visible {
     display: block;
+}
+.validerCommandeBtn{
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}
+.validerCommandeBtn:hover{
+    background-color: red;
+    color: white;
+    text-decoration:underline;
 }
 
 /*searchbar*/
@@ -192,3 +249,54 @@ header {
     font-size: 20px;
     z-index: 10;
 }
+.top-banner {
+    background-color: #ff0000; /* Bleu */
+    color: white;
+    text-align: center;
+    padding: 2px;
+    font-size: 16px;
+    position: relative; /* Pour le positionnement du bouton de fermeture */
+}
+
+.top-banner a {
+    color: white;
+    text-decoration: underline; /* Souligner les liens */
+    margin: 0 10px;
+}
+.top-banner .close-banner {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar ol {
+    list-style-type: none;
+    padding-left: 50;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+  }
+  .mots_navbar {
+    display: inline;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    
+  }
+  .mots_navbar a {
+    font-family: AvenirNext, Helvetica, Arial, sans-serif;
+    color: #6a7889;
+  }
+  .mots_navbar a:hover{
+    color: red;
+  }
+  .mots_navbar::after {
+    margin-left: 10px;
+    content: '/';
+    color: #888;
+  }
+  .navbar ol li:last-child::after {
+      content: none;
+  }

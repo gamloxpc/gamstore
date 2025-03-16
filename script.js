@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Déterminer la direction du défilement
+        if (scrollTop > lastScrollTop) {
+            // Défile vers le bas
+            header.classList.add('header-hidden');
+        } else {
+            // Défile vers le haut
+            header.classList.remove('header-hidden');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Pour gérer le cas où l'on est tout en haut
+    });
+});
 // Attendre que le DOM soit complètement chargé
 document.addEventListener('DOMContentLoaded', function() {
     // Sélectionner toutes les miniatures et l'image principale
@@ -81,7 +100,6 @@ function updateCart() {
 
     cart.forEach((item, index) => {
         totalPrice += item.price * item.quantity;
-
         // Créer un élément de liste pour chaque produit
         const li = document.createElement('li');
         li.innerHTML = `

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8C02DGRZWJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8C02DGRZWJ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre panier</title>
+    <link rel="shortcut icon" type="image/png" href="icon.jpg">
+    <link rel="stylesheet" href="principal.css">
+    <link rel="stylesheet" href="panier.css">
+</head>
+<body>    
+    <div class="top-banner">
+    <p>Livraison GRATUITE dès 60,00€ d'achats Livraison - <a href="livraison.html">En savoir plus</a></p>
+    <a href="#" class="close-banner">X</a>
+</div>
+    <header>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+        <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="panier-page">
+        <div class="panier-contenu">
+            <!-- Section des articles du panier -->
+            <section class="panier-articles">
+                <h2 class="titlePanier">Votre panier (<span id="cart-count">0</span>)</h2>
+                <ul id="cart-items">
+                    <!-- Les articles seront ajoutés ici par JavaScript -->
+                </ul>
+            </section>
+    
+            <!-- Récapitulatif de la commande -->
+            <aside class="panier-recap">
+                <div class="recap-box">
+                    <h3>Récapitulatif de la commande</h3>
+                    <div class="recap-line">
+                        <span>Sous-total</span>
+                        <span id="sous-total">0.00€</span>
+                    </div>
+                    <div class="recap-line">
+                        <span>Estimations des frais d'expédition et de manutention</span>
+                        <span id="frais-expedition">5.90€</span>
+                    </div>
+                    <div class="recap-line total">
+                        <span>Total (TVA incluse)</span>
+                        <span id="total">0.00€</span>
+                    </div>
+                    <p class="recap-info">* Vous ne serez pas facturé tant que vous n'aurez pas terminé le paiement à l'étape du paiements. Prix aproximatif; frais complet calculés à l'étape suivant.</p>
+                <!-- Options d'achat -->
+                <div class="panier-actions">
+                    <button class="btn-acheter">Se connecter et acheter</button>
+                    <a href="commande.html"><button  class="btn-acheter-sans-inscription">Acheter sans s'inscrire</button></a>
+                </div>
+            </div>
+            <div class="livraison-gratuite-progress">
+                <p id="montant-manquant">Bientôt la livraison offert !!</p>
+                <p><span id="montant-manquant">0.00€</span> jusqu'à la livraison gratuite !</p>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" id="progress-bar-inner"></div>
+                </div>
+                <div class="progress-values">
+                    <span>0.00€</span>
+                    <span>60.00€</span>
+                </div>
+            </div>
+                <div class="livraison-gratuite-progress" id="livraison-gratuite-message" style="display: none;">
+                    <p>Félicitations ! Vous bénéficiez de la livraison gratuite !</p>
+                </div>
+            
+                <!-- Code promo -->
+                <div class="code-promo">
+                    <p>Code Promo :</p>
+                    <input type="text" placeholder="Saisir le code">
+                    <button>Appliquer</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer style="background-color:#333; color:#fff; padding:20px;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+        
+            <div style="width:30%; min-width:250px;">
+                <h3>À propos de nous</h3>
+                <p>Courte description de votre entreprise et de ce que vous vendez. Mettez en avant votre mission et vos valeurs.</p>
+                <p><a href="aPropos.html" style="color:#fff; text-decoration:none;">En savoir plus</a></p>
+            </div>
+    
+            <div style="width:30%; min-width:250px;">
+                <h3>Informations utiles</h3>
+                <ul>
+                    <li><a href="livraison.html" style="color:#fff; text-decoration:none;">Livraison</a></li>
+                    <li><a href="retours.html" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
+                    <li><a href="paiement-securise.html" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
+                    <li><a href="faq.html" style="color:#fff; text-decoration:none;">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div style="width:30%; min-width:250px;">
+                <h3>Contact</h3>
+                <p>Adresse : Votre adresse physique</p>
+                <p>Email : <a href="mailto:contact@example.com" style="color:#fff;">contact@example.com</a></p>
+                <p>Téléphone : Votre numéro de téléphone</p>
+                <h3>Suivez-nous</h3>
+                <div style="display:flex; justify-content:flex-start;">
+                    <a href="#" style="color:#fff; margin-right:10px;"><img src="icone-facebook.png" alt="Facebook" width="24"></a>
+                    <a href="#" style="color:#fff; margin-right:10px;"><img src="icone-twitter.png" alt="Twitter" width="24"></a>
+                    <a href="#" style="color:#fff;"><img src="icone-instagram.png" alt="Instagram" width="24"></a>
+                </div>
+            </div>
+    
+            <div style="width:100%; text-align:center; margin-top:20px; font-size:0.8em;">
+                <p>© 2025 GamStore. Tous droits réservés.</p>
+                <p><a href="conditionVente.html" style="color:#fff; text-decoration:none;">Conditions générales de vente</a> | <a href="politique-confidentialite.html" style="color:#fff; text-decoration:none;">Politique de confidentialité</a> | <a href="mentions-legales.html" style="color:#fff; text-decoration:none;">Mentions légales</a></p>
+            </div>
+    
+        </div>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const sousTotalElement = document.getElementById('sous-total'); // On récupére quand meme le sous total
+        const montantManquantElement = document.getElementById('montant-manquant');
+        const progressBarInner = document.getElementById('progress-bar-inner');
+        const livraisonGratuiteSeuil = 60; // Seuil pour la livraison gratuite
+        const livraisonGratuiteMessage = document.getElementById('livraison-gratuite-message'); // Ajout de la variable pour le message de livraison gratuite
+    
+        let sousTotal = 0;
+    
+        // Calculer le sous-total (comme avant)
+        cartItems.forEach(item => {
+            sousTotal += item.price * item.quantity;
+        });
+    
+        // Calculer le montant manquant et le pourcentage de progression
+        const montantManquant = Math.max(0, livraisonGratuiteSeuil - sousTotal); // S'assurer que le montant ne soit pas négatif
+        const pourcentageAccompli = Math.min(100, (sousTotal / livraisonGratuiteSeuil) * 100); // Pourcentage entre 0 et 100
+    
+        // Afficher les informations
+        montantManquantElement.textContent = montantManquant.toFixed(2) + "€";
+        progressBarInner.style.width = pourcentageAccompli + "%";
+        sousTotalElement.textContent = sousTotal.toFixed(2) + "€";  // On remet a jours la valeur du sousTotal
+        if (sousTotal >= livraisonGratuiteSeuil) {
+        montantManquantElement.parentNode.style.display = 'none'; // Cacher le message "Il manque..."
+        progressBarInner.parentNode.style.display = 'none';      // Cacher la barre de progression
+        document.querySelector(".progress-values").style.display = 'none'; // Cacher les valeurs (0 et 60)
+        livraisonGratuiteMessage.style.display = 'block';         // Afficher le message de félicitations
+    } else {
+        montantManquantElement.parentNode.style.display = 'block'; // Afficher le message "Il manque..."
+        progressBarInner.parentNode.style.display = 'block';      // Afficher la barre de progression
+        document.querySelector(".progress-values").style.display = 'flex'; // Afficher les valeurs (0 et 60)
+        livraisonGratuiteMessage.style.display = 'none';         // Cacher le message de félicitations
+    }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartItemsElement = document.getElementById('cart-items');
+    const sousTotalElement = document.getElementById('sous-total');
+    const fraisExpeditionElement = document.getElementById('frais-expedition');
+    const totalElement = document.getElementById('total');
+    const cartCountElement = document.getElementById('cart-count');
+
+    let sousTotal = 0;
+    const fraisExpedition = 5.90;
+  
+    // Fonction pour obtenir l'URL de l'image en fonction du nom du produit
+    function getProductImage(productName) {
+        switch (productName) {
+            case 'casquette':
+                return 'logo panier.png'; // Remplacez par l'URL réelle
+            case 'tshirt':
+                return 'url_vers_image_tshirt.jpg'; // Remplacez par l'URL réelle
+            case 'hoodie':
+                return 'url_vers_image_hoodie.jpg'; // Remplacez par l'URL réelle
+            default:
+                return 'url_vers_image_par_defaut.jpg'; // Image par défaut
+        }
+    }
+   
+       
+    // Afficher les articles du panier
+    cartItems.forEach(item => {
+        const li = document.createElement('li');
+        const imageUrl = getProductImage(item.name); // Obtenir l'URL de l'image 
+        if (item.size === undefined) {
+            item.size = 'Taille Standard';
+        }
+        li.innerHTML = `
+            <div class="article-image">
+                <img src="${imageUrl}" alt="${item.name}" width="80">
+            </div>
+            <div class="article-details">
+                <h3>${item.name}</h3><br>
+                <p>Quantité: ${item.quantity}</p>
+                <p>Prix : ${item.price.toFixed(2)}€ / unité</p>
+                <p>Taille: ${item.size},</p>
+                <p>Couleur: ${item.color}</p><br><br>
+                <div class="article-actions">
+                    <a href="#">Modifier</a>
+                    <a href="#">Supprimer</a>
+                </div>
+            </div>
+            <div class="article-price">
+                ${(item.price * item.quantity).toFixed(2)}€
+            </div>
+        `;
+        cartItemsElement.appendChild(li);
+        sousTotal += item.price * item.quantity;
+    });
+
+    // Calculer le total
+    const total = sousTotal + fraisExpedition;
+
+    // Afficher les totaux
+    sousTotalElement.textContent = sousTotal.toFixed(2) + "€";
+    fraisExpeditionElement.textContent = fraisExpedition.toFixed(2) + "€";
+    totalElement.textContent = total.toFixed(2) + "€";
+     cartCountElement.textContent = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+});</script>
+    <script src="baner.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

@@ -23,7 +23,7 @@ body {
     margin-bottom: 25px;
     color: #2c3e50; /* Bleu foncé */
     text-align: center;
-    border-bottom: 2px solid #3498db; /* Ligne en dessous du titre */
+    border-bottom: 2px solid red; /* Ligne en dessous du titre */
     padding-bottom: 10px;
 }
 
@@ -46,7 +46,7 @@ body {
 .faq-item {
     margin-bottom: 25px;
     padding-bottom: 25px;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid red;
 }
 
 /* Style de la question */

@@ -76,7 +76,7 @@
 
 /* Style du bouton Envoyer */
 button[type="submit"] {
-    background-color: #5cb85c; /* Vert */
+    background-color: red; /* Vert */
     color: white;
     padding: 12px 20px;
     border: none;
@@ -88,7 +88,7 @@ button[type="submit"] {
 
 /* Style du bouton Envoyer au survol */
 button[type="submit"]:hover {
-    background-color: #449d44; /* Vert plus foncé */
+    background-color: #ba0a0a; /* Vert plus foncé */
 }
 
 /* Style des informations de contact */

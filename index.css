@@ -61,25 +61,3 @@
 .faq-answer.show {
     display: block; /* Afficher la réponse */
 }
-.top-banner {
-    background-color: #ff0000; /* Bleu */
-    color: white;
-    text-align: center;
-    padding: 2px;
-    font-size: 16px;
-    position: relative; /* Pour le positionnement du bouton de fermeture */
-}
-
-.top-banner a {
-    color: white;
-    text-decoration: underline; /* Souligner les liens */
-    margin: 0 10px;
-}
-.top-banner .close-banner {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    text-decoration: none;
-    font-weight: bold;
-}
