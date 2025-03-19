@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8C02DGRZWJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8C02DGRZWJ');
+</script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Ma Boutique</title>
+    <link href="collection.css" rel="stylesheet">
+    <link href="logo.png" rel="shortcut icon" type="image/png">
+    <link href="principal.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-bottom"> <!-- Nouveau conteneur -->
+            <nav class="menu">
+                <a class="texte_barre" href="index.html">ACCUEIL</a>
+                <a class="texte_barre" href="produit.html">PRODUITS</a>
+                <a class="texte_barre" href="collection.html">NOS COLLECTIONS</a>
+                <a class="texte_barre" href="contact.html">CONTACT</a>
+            </nav>
+                <h1 class="title_gamstore">GAMSTORE</h1>
+   <div class="search-container">
+            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+            <div id="search-results" class="search-results"></div>
+        </div>
+            <div class="menu-icons">
+                <a href="#" class="menu-icon-link">
+                    <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
+                    Connectez-vous | S'inscrire
+                </a>
+                <a href="#" id="cart-link" class="menu-icon-link">
+                    <img src="logo panier.png" alt="Mon panier" class="menu-icon">
+                    Mon panier (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </div>
+    </header><br>
+    <h2 class="titleH2">Nos collections</h2>
+    <div class="collection-banner">
+        <img src="testCollection.png" alt="Collection START">
+        <div class="collection-overlay">
+            <div class="collection-text">
+                <h2>FAITES LE GRAND PLONGEON</h2>
+                <h1>Baignez-vous avec style !</h1>
+                <p>Des basiques pour l'été et pour toute la famille</p>
+            </div>
+            <a href="collectionStart.html" class="collection-button">Voir la collection été</a>
+        </div>
+    </div>
+
+    <footer style="background-color:#333; color:#fff; padding:20px;">
+        <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between;">
+        
+            <div style="width:30%; min-width:250px;">
+                <h3>À propos de nous</h3>
+                <p>Studio de jeux-vidéo et de cinéma Français basé à Bordeaux dont le but est de créer les émotions de demain et les souvenirs d'hier.</p>
+                <p><a href="aPropos.html" style="color:#fff; text-decoration:none;">En savoir plus</a></p>
+            </div>
+    
+            <div style="width:30%; min-width:250px;">
+                <h3>Informations utiles</h3>
+                <ul>
+                    <li><a href="livraison.html" style="color:#fff; text-decoration:none;">Livraison</a></li>
+                    <li><a href="retours.html" style="color:#fff; text-decoration:none;">Retours et échanges</a></li>
+                    <li><a href="paiement-securise.html" style="color:#fff; text-decoration:none;">Paiement sécurisé</a></li>
+                    <li><a href="faq.html" style="color:#fff; text-decoration:none;">FAQ</a></li>
+                </ul>
+            </div>
+    
+            <div style="width:30%; min-width:250px;">
+                <h3>Contact</h3>
+                <p>Email : <a href="mailto:contact@gamlox-studio.com" style="color:#fff;">contact@gamlox-studio.com</a></p>
+                <p>Téléphone :  09 79 52 46 05</p>
+                <h3>Suivez-nous</h3>
+                <div style="display:flex; justify-content:flex-start;">
+                    <a href="#" style="color:#fff; margin-right:10px;">Facebook</a>
+                    <a href="#" style="color:#fff; margin-right:10px;">X ou Twitter</a>
+                    <a href="#" style="color:#fff; margin-right: 10px; ">Instagram</a>
+                </div>
+            </div>
+    
+            <div style="width:100%; text-align:center; margin-top:20px; font-size:0.8em;">
+                <p>© 2025 GamStore. Tous droits réservés.</p>
+                <p><a href="conditionVente.html" style="color:#fff; text-decoration:none;">Conditions générales de vente</a> | <a href="politique-confidentialite.html" style="color:#fff; text-decoration:none;">Politique de confidentialité</a> | <a href="mentions-legales.html" style="color:#fff; text-decoration:none;">Mentions légales</a></p>
+            </div>
+    
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

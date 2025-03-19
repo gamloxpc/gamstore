@@ -32,10 +32,10 @@
                 <a class="texte_barre" href="contact.html">CONTACT</a>
             </nav>
                 <h1 class="title_gamstore">GAMSTORE</h1>
-   <div class="search-container">
-            <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
-            <div id="search-results" class="search-results"></div>
-        </div>
+                <div class="search-container">
+                    <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
             <div class="menu-icons">
                 <a href="#" class="menu-icon-link">
                     <img src="logoUtilisateur.png" alt="Se Connecter/s'inscrire" class="menu-icon">
@@ -51,23 +51,22 @@
     <main>
        <h2>Nos Dernière nouvauté !!</h2> 
         <section id="products">
-         
             <div class="produit">
-                <a href="T-shirt.html">
-                    <img src="casquette1.png" alt="T-shirt">
+            <a href="T-shirt.html">
+                <img src="tShirtAvant.png" class="front" alt="T-shirt" data-name="t-shirt" data-price="19.99" data-category="2">
+                <img src="tShirtArriere.png" class="back" alt="T-shirt" data-name="t-shirt" data-price="19.99" data-category="2">
+            <div class="produit-details">
+                <h3>T-shirt</h3></a>
+                <p class="produit-prix">19.99€</p>
+            </div>
+            </div>
+            <div class="produit">
+                <a href="sweet.html">
+                    <img src="tShirtAvant.png" alt="sweet" data-name="sweet" data-price="39.99" data-category="2">
                 <div class="produit-details">
-                    <h3>T-shirt</h3></a>
+                    <h3>Sweet</h3></a>
                     <p class="produit-prix">19.99€</p>
                 </div>
-            </div>
-            <div class="produit">
-                <a href="casquette.html">
-                    <img src="casquette1.png" alt="casquette">
-                <div class="produit-details">
-                    <h3>casquette</h3></a>
-                    <p class="produit-prix">9.99€</p>
-                </div>
-            </div>
         </section>
         <section id="cart" style="display: none;">
             <h2>Votre Panier</h2>
@@ -121,7 +120,7 @@
                 </div>
                 <div class="faq-answer">
                    R : 🛑 Une fois la commande validée, elle est immédiatement traitée.
-                    Toute modification ou annulation doit être demandée dans les 24h après achat AVANT l'expédition de votre colis! Contacte-nous vite via notre formulaire de contact !
+                    Toute modification ou annulation doit être demandée dans les 24h après achat AVANT l'expédition de votre colis! Contacte-nous vite via notre formulaire de <a href="contact.html"> contact </a>!
 
                 </div>
         </li>
@@ -132,7 +131,7 @@
         
             <div style="width:30%; min-width:250px;">
                 <h3>À propos de nous</h3>
-                <p>Courte description de votre entreprise et de ce que vous vendez. Mettez en avant votre mission et vos valeurs.</p>
+                <p>Studio de jeux-vidéo et de cinéma Français basé à Bordeaux dont le but est de créer les émotions de demain et les souvenirs d'hier.</p>
                 <p><a href="aPropos.html" style="color:#fff; text-decoration:none;">En savoir plus</a></p>
             </div>
     
@@ -148,14 +147,13 @@
     
             <div style="width:30%; min-width:250px;">
                 <h3>Contact</h3>
-                <p>Adresse : Votre adresse physique</p>
-                <p>Email : <a href="mailto:contact@example.com" style="color:#fff;">contact@example.com</a></p>
-                <p>Téléphone : Votre numéro de téléphone</p>
+                <p>Email : <a href="mailto:contact@gamlox-studio.com" style="color:#fff;">contact@gamlox-studio.com</a></p>
+                <p>Téléphone :  09 79 52 46 05</p>
                 <h3>Suivez-nous</h3>
                 <div style="display:flex; justify-content:flex-start;">
-                    <a href="#" style="color:#fff; margin-right:10px;"><img src="icone-facebook.png" alt="Facebook" width="24"></a>
-                    <a href="#" style="color:#fff; margin-right:10px;"><img src="icone-twitter.png" alt="Twitter" width="24"></a>
-                    <a href="#" style="color:#fff;"><img src="icone-instagram.png" alt="Instagram" width="24"></a>
+                    <a href="#" style="color:#fff; margin-right:10px;">Facebook</a>
+                    <a href="#" style="color:#fff; margin-right:10px;">X ou Twitter</a>
+                    <a href="#" style="color:#fff; margin-right: 10px; ">Instagram</a>
                 </div>
             </div>
     

@@ -30,7 +30,7 @@
                 <h1 class="title_gamstore">GAMSTORE</h1>
    <div class="search-container">
             <input type="text" id="search-bar" class="search-box" placeholder="Rechercher un produit...">
-            <div id="search-results" class="search-results"></div>
+            <div id="suggestions" class="suggestions"></div>
         </div>
             <div class="menu-icons">
                 <a href="#" class="menu-icon-link">
@@ -67,47 +67,63 @@
                 <p>Catégorie <span class="toggle-icon">+</span></p>
                 <div class="filter-labels">  <!-- Ajout d'un conteneur pour les labels -->
                     <label>
-                        <input type="checkbox" value="tshirt" data-category="tshirt">T-shirt</label>
+                        <input type="checkbox" value="tshirt" data-category="tshirt,polo" >T-shirt, Polo</label>
                     <label>
-                        <input type="checkbox" value="hoodie" data-category="hoodie">Hoodie</label>
+                        <input type="checkbox" value="sweat" data-category="sweat,polo" >Sweat, Veste</label>
                     <label>
-                        <input type="checkbox" value="casquette" data-category="casquette">Casquette</label>
+                        <input type="checkbox" value="jogging" data-category="jogging" >Jogging</label>
+                    <label>
+                        <input type="checkbox" value="casquette" data-category="casquette,bonnet" >Casquette, Bonnet</label>
+                    <label>
+                        <input type="checkbox" value="divers" data-category="divers">Divers</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <p>Collection<span class="toggle-icon">+</span></p>
+                <div class="filter-labels">  <!-- Ajout d'un conteneur pour les labels -->
+                    <label>
+                        <input type="checkbox" value="start" data-collection="start">Collection Start</label>
+                    <label>
+                        <input type="checkbox" value="perma" data-collection="permante">Collection Permante</label>
                 </div>
             </div>
     
             <div class="filter-group">
-                <p>Prix<pan class="toggle-icon">+</pan> </p>
+                <p>Prix <span class="toggle-icon">+</span></p>
                 <div class="filter-labels">  <!-- Ajout d'un conteneur pour les labels -->
                     <label>
-                        <input type="checkbox" name="price" value="low" data-price="low"> Moins de 20€
+                        <input type="checkbox" name="price" value="low" data-price="low" data-prix-max="20">Moins de 20€ <span class="filter-count">(0)</span>
                     </label>
                     <label>
-                        <input type="checkbox" name="price" value="medium" data-price="medium"> Entre 20€ et 50€
+                        <input type="checkbox" name="price" value="medium" data-price="medium" data-prix-min="20" data-prix-max="50">Entre 20€ et 50€ <span class="filter-count">(0)</span>
                     </label>
                     <label>
-                        <input type="checkbox" name="price" value="high" data-price="high"> Plus de 50€
+                        <input type="checkbox" name="price" value="high" data-price="high" data-prix-min="50">Plus de 50€ <span class="filter-count">(0)</span>
                     </label>
+                </div>
             </div>
         </aside>
+        
     
         <section id="products">
-            <div class="produit">
+            <div class="produit" alt="T-shirt" data-name="t-shirt" data-price="19.99" data-category="tshirt,polo" data-collection="start">
                 <a href="T-shirt.html">
-                    <img src="tShirtAvant.png" alt="T-shirt" data-name="t-shirt" data-price="19.99" data-category="2">
+                    <img src="tShirtAvant.png" class="front" alt="T-shirt Face avant" >
+                    <img src="tShirtArriere.png" class="back" alt="t-shirt face arrière" >
                 <div class="produit-details">
                     <h3>T-shirt</h3></a>
                     <p class="produit-prix">19.99€</p>
                 </div>
             </div>
-            <div class="produit">
-                <a href="sweet.html">
-                    <img src="tShirtAvant.png" alt="sweet" data-name="sweet" data-price="39.99" data-category="2">
+            <div class="produit" data-name="sweet" data-price="39.99" data-category="sweat,polo" data-collection="start">
+                <a href="sweet.html" >
+                    <img src="tShirtAvant.png" alt="sweet" >
                 <div class="produit-details">
                     <h3>Sweet</h3></a>
-                    <p class="produit-prix">19.99€</p>
+                    <p class="produit-prix">39.99€</p>
                 </div>
             </div>
-            <div class="produit" data-name="casquette" data-price="9.99" data-category="1">
+            <div class="produit" data-name="casquette" data-price="9.99" data-category="casquette,bonnet" data-collection="start">
                 <a href="casquette.html">
                     <img src="casquette1.png" alt="casquette">
                 <div class="produit-details">
@@ -115,43 +131,43 @@
                     <p class="produit-prix">9.99€</p>
                 </div>
             </div>
-            <div class="produit">
+            <div class="produit" data-name="polo" data-price="24.99" data-category="tshirt,polo" data-collection="start">
                 <a href="polo.html">
-                    <img src="tShirtAvant.png" alt="Polo" data-name="polo" data-price="24.99" data-category="2">
+                    <img src="tShirtAvant.png" alt="Polo" >
                 <div class="produit-details">
                     <h3>Notre polo</h3></a>
                     <p class="produit-prix">24.99€</p>
                 </div>
             </div>
-            <div class="produit">
+            <div class="produit" data-name="bonnet" data-price="9.99" data-category="casquette,bonnet" data-collection="start">
                 <a href="bonnet.html">
-                    <img src="tShirtAvant.png" alt="bonnet" data-name="bonnet" data-price="9.99" data-category="1">
+                    <img src="tShirtAvant.png" alt="bonnet">
                 <div class="produit-details">
                     <h3>bonnet</h3></a>
                     <p class="produit-prix">9.99€</p>
                 </div>
             </div>
-            <div class="produit">
+            <div class="produit" data-name="jogging" data-price="24.99" data-category="jogging" data-collection="start">
                 <a href="jogging.html">
-                    <img src="tShirtAvant.png" alt="jogging" data-name="jogging" data-price="24.99" data-category="3">
+                    <img src="tShirtAvant.png" alt="jogging">
                 <div class="produit-details">
-                    <h3>T-shirt</h3></a>
+                    <h3>Jogging</h3></a>
                     <p class="produit-prix">24.99€</p>
                 </div>
             </div>
-            <div class="produit">
+            <div class="produit" data-name="tasse" data-price="9.99" data-category="divers" data-collection="permante">
                 <a href="tasse.html">
-                    <img src="tShirtAvant.png" alt="tasse" data-name="tasse" data-price="9.99" data-category="4">
+                    <img src="tShirtAvant.png" alt="tasse" >
                 <div class="produit-details">
                     <h3>Tasse</h3></a>
                     <p class="produit-prix">9.99€</p>
                 </div>
             </div>
-            <div class="produit">
+            <div class="produit" data-name="veste" data-price="39.99" data-category="sweat,polo" data-collection="start">
                 <a href="veste.html">
-                    <img src="tShirtAvant.png" alt="veste" data-name="veste" data-price="39.99" data-category="2">
+                    <img src="tShirtAvant.png" alt="veste" >
                 <div class="produit-details">
-                    <h3>T-shirt</h3></a>
+                    <h3>Veste</h3></a>
                     <p class="produit-prix">39.99€</p>
                 </div>
             </div>
@@ -208,6 +224,7 @@
     <script>document.addEventListener('DOMContentLoaded', function() {
         const products = Array.from(document.querySelectorAll('#products .produit'));
         const categoryCheckboxes = document.querySelectorAll('.filters input[type="checkbox"][data-category]');
+        const collectionCheckboxes = document.querySelectorAll('.filters input[type="checkbox"][data-collection]');
         const priceCheckboxes = document.querySelectorAll('.filters input[type="checkbox"][name="price"]');
         const sortBySelect = document.getElementById('sort-by');
     
@@ -246,16 +263,20 @@
             const selectedCategories = Array.from(categoryCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.dataset.category);
-    
+            const selectedCollections = Array.from(collectionCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.dataset.collection);
             const selectedPrices = Array.from(priceCheckboxes)
                 .filter(checkbox => checkbox.checked)
                 .map(checkbox => checkbox.dataset.price);
     
             products.forEach(product => {
                 const category = product.dataset.category;
+                const collection = product.dataset.collection;
                 const price = parseFloat(product.dataset.price);
     
                 const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(category);
+                const collectionMatch = selectedCollections.length === 0 || selectedCollections.includes(collection);
     
                 let priceMatch = selectedPrices.length === 0; // Afficher tous les produits si aucun prix n'est sélectionné
                 if (selectedPrices.length > 0) {
@@ -277,6 +298,11 @@
                 } else {
                     product.style.display = 'none';
                 }
+                if (collectionMatch && priceMatch) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
             });
     
             // Tri des produits APRÈS le filtrage
@@ -293,11 +319,59 @@
         categoryCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', filterProducts);
         });
+        collectionCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterProducts);
+        });
     
         priceCheckboxes.forEach(checkbox => {
             checkbox.addEventListener('change', filterProducts);
         });
-    });</script>
+    });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const produits = [
+        { id: 1, name: "T-shirt", prix: 19.99 },
+        { id: 2, name: "Casquette", prix: 9.99 },
+        { id: 3, name: "Sweat", prix: 39.99 },
+        { id: 4, name: "Polo", prix: 24.99 },
+        { id: 5, name: "Bonnet", prix: 9.99 },
+        { id: 6, name: "Jogging", prix: 24.99 },
+        { id: 7, name: "Tasse", prix: 9.99 },
+        { id: 8, name: "Veste", prix: 39.99 }
+    ];
+
+    console.log("Type de données de produits :", typeof produits);
+    console.log("Valeur de produits :", produits);
+
+    // Fonction pour calculer le nombre de produits correspondant à un filtre
+    function calculerNombreProduits(prixMin, prixMax) {
+        return produits.filter(produit => {
+            return !(
+                (prixMin !== undefined && produit.prix < prixMin) ||
+                (prixMax !== undefined && produit.prix > prixMax)
+            );
+        }).length;
+    }
+
+    // Mettre à jour le nombre de produits pour chaque filtre
+    const checkboxes = document.querySelectorAll('.filter-labels input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        const prixMin = parseFloat(checkbox.dataset.prixMin);
+        const prixMax = parseFloat(checkbox.dataset.prixMax);
+        const nombreProduits = calculerNombreProduits(prixMin, prixMax);
+        const countSpan = checkbox.parentNode.querySelector('.filter-count');
+
+        // Vérifier si countSpan a été trouvé avant d'essayer de modifier son textContent
+        if (countSpan) {
+            countSpan.textContent = `(${nombreProduits})`;
+        } else {
+            const labelId = checkbox.parentNode.id; // Récupérer l'ID du label
+            console.error("L'élément .filter-count n'a pas été trouvé pour le label avec l'ID :", labelId);
+        }
+    });
+});
+    </script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const filterGroups = document.querySelectorAll('.filter-group');

@@ -13,7 +13,8 @@ main {
    display: flex;  /* Pour aligner les filtres et les produits côte à côte */
 }
 .filters {
-    width: 200px; /* Ajustez la largeur selon vos besoins */
+    min-width: 200px;
+    max-width: 400px; /* Ajustez la largeur selon vos besoins */
     padding: 20px;
     border-right: 1px solid #ccc;
 }
@@ -41,7 +42,6 @@ main {
     color: red;
 }
 .filter-labels {
-    display: flex;
     flex-wrap: wrap; /* Permet aux labels de passer à la ligne si nécessaire */
     display: none; /* Masque la section par défaut */
     height: 0;          /* Hauteur initiale à 0 */
@@ -56,10 +56,12 @@ main {
     
 }
 .filter-group label {
-    width: auto; /* La largeur s'adapte au contenu */
-    display: inline-block; /* Affiche les labels sur la même ligne */
+    /* La largeur s'adapte au contenu */
+    display: flex; /* Affiche les labels sur la même ligne */
     margin-right: 0.5em; /* Espacement entre les labels */
     margin-bottom: 0.5em; /* Espacement en dessous pour éviter qu'ils ne collent au groupe suivant */
+    color: #565656;
+    max-width: 200px; /* Limite la largeur pour éviter que les labels ne s'étendent trop */
 
 }
 
@@ -77,20 +79,39 @@ main {
     flex-wrap: wrap; /* Permet aux produits de passer à la ligne */
 }
 .produit{
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-left: 10px;
-    margin-left: 10px;
+    padding-left: 20px;
+    margin-left: 30px;
     padding-right: 10px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
     width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.produit:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05) rotate(1deg);
 }
 .produit img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    transition: opacity 0.5s;
+}
+.produit img.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.produit:hover img.front {
+    opacity: 0;
+}
+.produit:hover img.back {
+    opacity: 1;
 }
 .produit-details {
     text-align: center;

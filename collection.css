@@ -1,0 +1,88 @@
+/* Style général de la bannière */
+.collection-banner {
+    position: relative;          /* Pour positionner le texte et le bouton */
+    width: 100%;               /* Prendre toute la largeur disponible */
+    height: 900px;              /* Hauteur fixe de la bannière (à adapter) */
+    overflow: hidden;           /* Cacher le contenu qui dépasse */
+
+}
+
+/* Style de l'image */
+ .collection-banner img {
+    width: 90%;               /* Prendre toute la largeur */
+    height: 90%;              /* Prendre toute la hauteur */
+    object-fit: cover;         /* Adapter l'image à la taille du conteneur */
+    border-radius: 8px;         /* Arrondir les coins */
+} 
+
+/* Style de la superposition (texte et bouton) */
+.collection-overlay {
+    position: absolute;          /* Positionnement absolu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;              /* Active Flexbox */
+    flex-direction: column;     /* Aligner verticalement */
+    justify-content: center;   /* Centre verticalement */
+    align-items: flex-start;    /* Aligner horizontalement à gauche */
+    padding: 20px;
+    color: white;              /* Couleur du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre sur le texte pour la lisibilité */
+}
+
+/* Style du texte */
+.collection-text h2 {
+    font-size: 1.5em;         /* Taille de la police */
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Mettre le texte en majuscules */
+    font-weight: bold;
+}
+
+.collection-text h1 {
+    font-size: 3em;           /* Taille de la police */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.collection-text p {
+    font-size: 1.1em;         /* Taille de la police */
+    line-height: 1.4;
+}
+
+/* Style du bouton Voir la collection */
+.collection-button {
+    display: inline-block;       /* Comportement de bloc en ligne */
+    padding: 12px 24px;         /* Espacement intérieur */
+    background-color: transparent; /* Fond transparent */
+    border: 2px solid red;       /* Bordure rouge */
+    border-radius: 4px;         /* Arrondir les coins */
+    color: white;              /* Couleur du texte */
+    text-decoration: none;       /* Supprimer le soulignement */
+    font-size: 1.1em;         /* Taille de la police */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transition au survol */
+}
+
+/* Style du bouton au survol */
+.collection-button:hover {
+    background-color: rgba(255, 0, 0, 0.2); /* Fond rouge transparent au survol */
+    text-decoration: underline;
+}
+.titleH1{
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+.titleH2{
+    font-size: 1.75em;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+.imgcol{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

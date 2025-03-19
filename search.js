@@ -1,50 +1,43 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const searchBox = document.getElementById("search-bar");
-    const searchResults = document.getElementById("search-results");
+const produits = [
+    { name: "sweet", url: "sweet.html", img: "casquette1.png" },
+    { name: "casquette", url: "casquette.html", img: "casquette1.png" },
+    { name: "polo", url: "polo.html", img: "casquette1.png" },
+    { name: "t-shirt", url: "T-shirt.html", img: "casquette1.png" },
+    { name: "veste", url: "veste.html", img: "casquette1.png" },
+    { name: "chaussures", url: "chaussures.html", img: "casquette1.png" },
+    { name: "jean", url: "jean.html", img: "casquette1.png" },
+    { name: "pull", url: "pull.html", img: "casquette1.png" },
+    { name: "bonnet", url: "bonnet.html", img: "casquette1.png" },
+    { name: "gants", url: "gants.html", img: "casquette1.png" }
+  ];
 
-    // Liste des produits (à compléter dynamiquement si besoin)
-    const products = [
-        { name: "T-shirt", link: "T-shirt.html"  },
-        { name: "Sweet", link: "sweet.html" },
-        { name: "Casquette", link: "casquette.html" },
-        { name: "Polo", link: "polo.html"  },
-        { name: "Bonnet", link: "bonnet.html" },
-        { name: "Jogging", link: "jogging.html" },
-        { name: "Tasse", link: "tasse.html" },
-        { name: "Veste", link: "veste.html" }
-    ];
+  const searchInput = document.getElementById('search-bar');
+  const suggestionsContainer = document.getElementById('suggestions');
 
-    searchBox.addEventListener("input", function () {
-        const query = searchBox.value.toLowerCase().trim();
-        searchResults.innerHTML = "";
+  searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      suggestionsContainer.innerHTML = '';
 
-        if (query === "") {
-            searchResults.style.display = "none";
-            return;
-        }
+      if (query) {
+          const filteredProducts = produits.filter(produit => produit.name.toLowerCase().includes(query));
 
-        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+          filteredProducts.forEach(produit => {
+              const suggestionItem = document.createElement('div');
+              suggestionItem.innerHTML = `<span>${produit.name}</span><img src="${produit.img}" alt="${produit.name}">`;
+              suggestionItem.addEventListener('click', () => {
+                  window.location.href = produit.url;
+              });
+              suggestionsContainer.appendChild(suggestionItem);
+          });
+          suggestionsContainer.style.display = 'block';
+      } else {
+          suggestionsContainer.style.display = 'none';
+      }
+  });
 
-        if (filteredProducts.length > 0) {
-            searchResults.style.display = "block";
-            filteredProducts.forEach(product => {
-                const item = document.createElement("div");
-                item.classList.add("search-item");
-                item.textContent = product.name;
-                item.addEventListener("click", () => {
-                    window.location.href = product.link;
-                });
-                searchResults.appendChild(item);
-            });
-        } else {
-            searchResults.style.display = "none";
-        }
-    });
-
-    // Cacher les résultats quand on clique ailleurs
-    document.addEventListener("click", function (e) {
-        if (!searchBox.contains(e.target) && !searchResults.contains(e.target)) {
-            searchResults.style.display = "none";
-        }
-    });
-});
+  document.addEventListener('click', (e) => {
+      if (!suggestionsContainer.contains(e.target) && e.target !== searchInput) {
+          suggestionsContainer.innerHTML = '';
+          suggestionsContainer.style.display = 'none';
+      }
+  });

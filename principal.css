@@ -1,8 +1,7 @@
 body {
     font-family: AvenirNext, Helvetica, Arial, sans-serif;
     margin: 0;
-    margin-top: 30px;
-    padding: 0;
+    padding-top: 40px;
     background-color: white;
 }
 
@@ -207,47 +206,56 @@ header {
 
 /* Conteneur principal de la barre de recherche */
 .search-container {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center;
-    width: 80%; /* Prend toute la largeur disponible mais ne dépasse pas */
-    max-width: 300px; /* Limite sa taille */
-    margin: 0 auto; /* Centre le conteneur */
     position: relative;
-    left: 230px;
-    top: 0px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    margin-left: 25%;
 }
 
-/* Style de la barre de recherche */
 .search-box {
-    width: 100%; /* Remplit son conteneur */
-    max-width: 400px; /* Empêche qu'il soit trop large */
+    width: 300px;
     padding: 10px;
-    border: 1px solid #ccc;
     font-size: 16px;
-    background-color: rgba(255, 1, 1, 0.2);
-    border-radius: 35px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
     outline: none;
     transition: all 0.3s ease-in-out;
 }
-.search-box::placeholder {
-    color: black;
-}
-/* Conteneur des résultats */
-.search-results {
+
+.suggestions {
     position: absolute;
-    top: 45px;
-    width: 100%; /* Suit la largeur de la barre de recherche */
-    max-width: 270px;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-    height: 100%;
-    max-height: 250px;
-    overflow-y: auto;
-    color: #000000;
-    font-size: 20px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
     z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.suggestions div {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestions img {
+    margin-left: auto;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
 }
 .top-banner {
     background-color: #ff0000; /* Bleu */
